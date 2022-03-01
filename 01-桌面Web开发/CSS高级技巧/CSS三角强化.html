@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三角强化</title>
+    <style>
+        .box {
+            width: 0;
+            height: 0;
+            margin: 100px auto;
+            /*形成*/
+            /*border-top: 100px solid red;*/
+            /*border-right: 100px solid green;*/
+            /*border-bottom: 100px solid blue;*/
+            /*border-left: 100px solid yellow;*/
+            /*正确方法*/
+            /*border-top: 200px solid transparent;*/
+            /*border-right: 100px solid green;*/
+            /*border-bottom: 0px solid blue;*/
+            /*border-left: 0px solid yellow;*/
+            /*简写方式*/
+            border-color: transparent red transparent transparent;
+            border-style: solid;
+            border-width: 200px 100px 0 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

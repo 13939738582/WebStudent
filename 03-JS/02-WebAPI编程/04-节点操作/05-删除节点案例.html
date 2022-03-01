@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>
+        <div>
+            <a href="">111</a>
+        </div>
+    </li>
+</ul>
+<button>删除</button>
+<script>
+    var ul = document.querySelector('ul');
+    var btn = document.querySelector('button');
+    btn.onclick = function (){
+        if (ul.children.length!=0){
+            ul.removeChild(ul.children[ul.children.length-1]);
+        }else {
+            this.disabled = true;
+        }
+    }
+</script>
+</body>
+</html>

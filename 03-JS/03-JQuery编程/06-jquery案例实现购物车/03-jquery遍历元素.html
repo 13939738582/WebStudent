@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<script>
+    $(function (){
+        // 如果做相同的操作，可以利用隐式迭代
+        // $('div').css('background','red');
+        // 但是如果相对它们做不同的操作，那么就需要遍历元素
+        var arr = ['red','green','blue'];
+        // var sum = 0;
+        $('div').each(function (index, element){
+            // 注意第一个参数是索引号，第二个参数是对应的DOM对象
+            $(element).css('background',arr[index]);
+            // sum+=parseInt($(element).text());
+        })
+        // console.log(sum);
+
+        // $.each()方法遍历元素 主要用于遍历数据 处理数据
+
+        // $.each(arr,function (i,e){
+        //     console.log(e);
+        // });
+
+        // var temp = 0;
+        // $.each($('div'),function (i,e){
+        //     temp+=parseInt($(e).text());
+        // });
+        // console.log(temp);
+
+    });
+</script>
+</body>
+</html>

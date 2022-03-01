@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>点击</button>
+<script>
+    // 一般情况下this指向最终调用它的对象
+
+    // 全局作用域或普通函数种的this指向全局对象window
+    console.log(this);
+    function fu(){
+        console.log(this);
+    }
+    fu();
+    setTimeout(function (){
+        console.log(this);
+    },1000);
+
+    // 方法种调用的this  指向调用该方法的对象
+
+    var fa = {
+        hi: function (){
+            console.log(this);
+        }
+    }
+    fa.hi();
+
+    var btn = document.querySelector('button');
+    btn.addEventListener("click", function (){
+        console.log(this);
+    })
+
+    // 构造函数种的this (指向实例对象)
+    function Fun(){
+        console.log(this);
+    }
+    var fun = new Fun();
+
+
+
+</script>
+</body>
+</html>

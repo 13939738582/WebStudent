@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .sliderbar {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top: 100px;
+        }
+        span {
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            z-index: 1;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+        }
+        .con {
+            width: 300px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            top: 0;
+            left: -200px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+    <script src="05-动画函数.js"></script>
+</head>
+<body>
+<div class="sliderbar">
+    <span>➡</span>
+    <div class="con">问题反馈</div>
+</div>
+<script>
+    var sliderbar = document.querySelector('.sliderbar');
+    var sp = document.querySelector('span');
+    var con = document.querySelector('.con');
+    sliderbar.addEventListener('mouseenter',function (){
+        animate(con,100,function (){
+            sp.innerHTML = '⬅'
+        })
+    })
+    sliderbar.addEventListener('mouseleave',function (){
+        animate(con,-200,function (){
+            sp.innerHTML = '➡';
+        })
+    })
+</script>
+</body>
+</html>

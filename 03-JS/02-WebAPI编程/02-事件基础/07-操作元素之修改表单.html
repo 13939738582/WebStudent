@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>按钮</button>
+<input type="text" value="输入内容">
+<script>
+    var btn = document.querySelector('button');
+    var inp = document.querySelector('input');
+
+    btn.onclick = function (){
+        inp.value = '奥特曼';
+        // 表单被禁用，不能在点击  按钮禁用
+        btn.disabled = true;
+        // this指向函数的调用者
+        // this.disable = true;
+    }
+</script>
+</body>
+</html>

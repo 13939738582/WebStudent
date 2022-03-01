@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="zdyajax.js"></script>
+    <script>
+        itheima({
+            method: 'post',
+            url: 'http://www.liulongbin.top:3006/api/addbook',
+            data: {
+                bookname: '测试测试a',
+                author: '撒大苏打a',
+                publisher: '撒发我a'
+            },
+            success: function(res) {
+                console.log(res);
+            }
+        });
+
+        itheima({
+            method: 'get',
+            url: 'http://www.liulongbin.top:3006/api/getbooks',
+            // data: {
+            //     id: 1
+            // },
+            success: function(res) {
+                console.log(res);
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

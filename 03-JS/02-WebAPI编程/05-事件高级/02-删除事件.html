@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<script>
+    var divs = document.querySelectorAll('div');
+    // 1
+    divs[0].onclick = function (){
+        alert('hello');
+        this.onclick = null;
+    }
+    // 2
+    function fn(){
+        alert('world');
+        divs[1].removeEventListener("click", fn);
+    }
+    divs[1].addEventListener("click", fn);
+</script>
+</body>
+</html>

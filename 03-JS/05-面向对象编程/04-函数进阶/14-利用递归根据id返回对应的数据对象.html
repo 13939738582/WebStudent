@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var data = [
+            {
+                id:1,
+                name:'家电',
+                goods:[
+                    {
+                        id:11,
+                        gname:'冰箱'
+                    },
+                    {
+                        id:12,
+                        gname:'洗衣机'
+                    }
+                ]
+            },
+            {
+                id:2,
+                name:'服饰'
+            }
+        ];
+        // 输入对应的id，返回数据对象
+
+        // 1.利用forEach或者some 遍历每一个对象
+        function getId(json,id){
+            var obj = {};
+            json.some(function (item){
+                if (item.id == id){
+                    obj = item;
+                    return item;
+                } else if (item.goods&&item.goods.length>0){
+                   obj = getId(item.goods,id);
+                }
+            });
+            return obj;
+        }
+        console.log(getId(data,11));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

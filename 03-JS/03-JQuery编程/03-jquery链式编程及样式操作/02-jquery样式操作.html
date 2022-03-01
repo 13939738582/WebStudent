@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transition: all 1s;
+        }
+        .bg {
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+        }
+        .bg1 {
+            background-color: black;
+            transform: rotate(360deg);
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div></div>
+<button>切换</button>
+<script>
+    $(function (){
+        // 1.参数只写属性名，返回属性值
+        console.log($('div').css('width'));
+        // 2.修改样式css（属性名，属性值） 属性名必须加引号
+        // $('div').css('width','400px');
+        // 3.更改多个样式 采用对象的方式
+        // $('div').css({
+        //     width:300,
+        //     height:300,
+        //     // 复合属性需要采用驼峰命名法
+        //     backgroundColor:'green'
+        // });
+        // 4.添加类
+        $('div').addClass('bg');
+        $('div').addClass('bg1');
+        // 5.删除类
+        $('div').removeClass('bg1');
+        // 5.切换类
+        $('button').click(function (){
+            $('div').toggleClass('bg1');
+        })
+    });
+</script>
+</body>
+</html>

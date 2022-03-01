@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东秒杀</title>
+    <style>
+        .box {
+            width: 160px;
+            height: 24px;
+            border: 1px solid red;
+            margin: 100px auto;
+            line-height: 24px;
+        }
+        .miaosha {
+            position: relative;
+            float: left;
+            width: 90px;
+            height: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+            margin-right: 10px;
+            font-weight: 700;
+        }
+        .yuanjia {
+            font-size: 12px;
+            color: gray;
+            text-decoration: line-through;
+        }
+        .miaosha i {
+            width: 0;
+            height: 0;
+            border-color: transparent white transparent transparent;
+            border-style: solid;
+            border-width: 24px 12px 0 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <span class="miaosha">$1995
+        <i></i>
+    </span>
+    <span class="yuanjia">$5999</span>
+</div>
+</body>
+</html>

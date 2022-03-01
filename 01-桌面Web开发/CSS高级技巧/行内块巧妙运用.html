@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行内块巧妙运用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            text-align: center;
+        }
+        .box a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 36px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+        .box .prev ,.box .next {
+            width: 85px;
+        }
+        .box .ts1 , .box .ts2{
+            background-color: white;
+            border: none;
+        }
+        .input1 {
+            width: 45px;
+            height: 36px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        .button1 {
+            width: 60px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <a href="#" class="prev">&lt;&lt;上一页</a>
+    <a href="#">1</a>
+    <a href="#" class="ts1">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#" class="ts2">...</a>
+    <a href="#" class="next">&gt;&gt;下一页</a>
+    共10页 到第
+    <input type="text" class="input1">
+    页
+    <button class="button1">确定</button>
+</div>
+</body>
+</html>

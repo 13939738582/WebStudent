@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<button>点击到500</button>
+<button>点击到900</button>
+<button>点击到0</button>
+<script>
+  function animate(obj,target,callback){
+      clearInterval(obj.timer);
+      obj.timer = setInterval(function (){
+          var step = (target-obj.offsetLeft)/10;
+          step = step >0 ? Math.ceil(step) : Math.floor(step);
+          if (obj.offsetLeft==target){
+              clearInterval(obj.timer);
+              callback();
+          }else {
+              obj.style.left = obj.offsetLeft+step+'px';
+          }
+      },20);
+  }
+  // function goBackAnimate(obj,target){
+  //     clearInterval(obj.timer);
+  //     obj.timer = setInterval(function (){
+  //         if (obj.style.left==target){
+  //             clearInterval(obj.timer);
+  //         }else {
+  //             obj.style.left = obj.offsetLeft-Math.ceil(obj.offsetLeft/10)+'px';
+  //         }
+  //     },20);
+  // }
+  var div = document.querySelector('div');
+  var btn = document.querySelectorAll('button');
+  btn[0].addEventListener("click", function (){
+      animate(div,500,function (){
+          div.style.backgroundColor = 'yellow';
+      });
+  });
+  btn[1].addEventListener("click", function (){
+      animate(div,900,function (){
+          div.style.backgroundColor = 'green';
+      });
+  });
+  btn[2].addEventListener("click", function (){
+      animate(div,0,function (){
+          div.style.backgroundColor = 'red';
+      });
+  });
+</script>
+</body>
+</html>

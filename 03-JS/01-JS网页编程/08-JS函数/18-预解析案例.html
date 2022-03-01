@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 案例一
+        var num = 10;
+        fun();
+        function fun(){
+            console.log(num);
+            var num = 20;
+        }
+
+        // 相当于执行了
+        // var num ;
+        // num=10;
+        // function fun(){
+        //     var num;
+        //     console.log(num);
+        //     num = 20;
+        // }
+        // fun();
+
+        // 案例二
+        // var num = 10;
+        // function fn(){
+        //     console.log(num);
+        //     var num = 20;
+        //     console.log(num);
+        // }
+        // fn();
+
+        // 相当于执行了
+        // var num;
+        // num = 10;
+        // function fn(){
+        //     var num;
+        //     console.log(num);
+        //     num = 20;
+        //     console.log(num);
+        // }
+        // fn();
+
+
+        // 案例三
+        // var a = 18;
+        // f1();
+        // function f1(){
+        //     var b = 9;
+        //     console.log(a);
+        //     console.log(b);
+        //     var a = '123';
+        // }
+
+        // 相当于执行了
+        // var a;
+        // a = 18;
+        // function f1(){
+        //     var b;
+        //     b = 9;
+        //     var a;
+        //     console.log(a);
+        //     console.log(b);
+        //     a = '123';
+        // }
+        // f1();
+
+        // 案例4
+        // f2();
+        // console.log(c1);
+        // console.log(b1);
+        // console.log(a1);
+        // function f2(){
+        //     var a1 = b1 = c1 = 9;
+        //     console.log(a1);
+        //     console.log(b1);
+        //     console.log(c1);
+        // }
+
+        // 相当于
+        // function f2(){
+        //     var a1;
+        //     a1 = 9;
+        //     b1 = 9;
+        //     c1 = 9;
+        //     console.log(a1);
+        //     console.log(b1);
+        //     console.log(c1);
+        // }
+        // f2();
+        // console.log(c1);
+        // console.log(b1);
+        // console.log(a1);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

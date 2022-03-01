@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>123</div>
+<button>创建</button>
+<div class="box"></div>
+
+<script>
+    // 第一种document.write()
+    // 当页面加载完成后在使用会导致页面重绘
+    // var btn = document.querySelector('button');
+    // btn.onclick =function (){
+    //     document.write('<p>222</p>');
+    // }
+
+
+    var box = document.querySelector('.box');
+
+    // 第二种element.innerHTML
+    // box.innerHTML = '<a href="#">去百度</a>';
+
+
+
+    // 第三种createElement()
+    // var a = document.createElement('a');
+    // a.innerHTML = '<a href="#">去百度</a>';
+    // box.appendChild(a);
+
+
+
+
+    // innerHTML和createElement效率对比
+
+    // 1.innerHTML使用拼接字符串创建元素
+    // var d1 = new Date();
+    // for (var i=0;i<1000;i++){
+    //     box.innerHTML += '<a href="#">去百度</a>';
+    // }
+    // var d2 = new Date();
+    // console.log(d2-d1);
+
+
+
+    // 2.createElement()创建元素
+    // var d1 = new Date();
+    // for (var i=0;i<1000;i++){
+    //     var a = document.createElement('a');
+    //     a.innerHTML = '<a href="#">去百度</a>';
+    //     box.appendChild(a);
+    // }
+    // var d2 = new Date();
+    // console.log(d2-d1);
+
+
+
+    // 3.innerHTML使用数组创建元素
+    // var d1 = new Date();
+    // var arr = [];
+    // for (var i=0;i<1000;i++){
+    //     arr.push('<a href="#">去百度</a>');
+    // }
+    // box.innerHTML = arr.join('');
+    // var d2 = new Date();
+    // console.log(d2-d1);
+</script>
+</body>
+</html>

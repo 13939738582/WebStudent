@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 定义为全局作用域的变量 函数 方法都会变成window对象的属性和方法
+    var num = 10;
+    console.log(window.num);
+    function fn(){
+        console.log(11);
+    }
+    window.fn();
+    // window.alert('123');
+    // window.prompt('输入数字');
+
+    console.dir(window);
+    // console.log(window.name);
+</script>
+</body>
+</html>

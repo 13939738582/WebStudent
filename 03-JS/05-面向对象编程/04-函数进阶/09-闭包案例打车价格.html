@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 打车起步价格13元（3公里以内），之后每多一公里增加5元，用户输入距离计算出打车价格
+        // 如果发生拥堵，额外收取十元
+        var money = (function (){
+            var start = 13;//起步价
+            var total = 0;//总价
+            return {
+                // 价格
+                price: function (x){
+                    return x<=3? total = start:total = start+(x-3)*5;
+                },
+                // 拥堵
+                congestion: function (flag){
+                    return flag? total+10:total;
+                }
+            }
+        })();
+        console.log(money.price(5));
+        console.log(money.congestion(true));
+        console.log(money.price(5));
+        console.log(money.congestion(false));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

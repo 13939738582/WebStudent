@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>开启setInterval定时器</button>
+<button>停止setInterval定时器</button>
+<script>
+    var btn = document.querySelectorAll("button");
+    var dsq = null;
+    btn[0].onclick = function (){
+        dsq = setInterval(function (){
+            console.log('我是循环计时器');
+        },2000);
+    }
+    btn[1].onclick = function (){
+        clearInterval(dsq);
+    }
+</script>
+</body>
+</html>

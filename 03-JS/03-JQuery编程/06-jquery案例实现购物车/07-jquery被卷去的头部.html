@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        .back {
+            position: fixed;
+            width: 70px;
+            height: 50px;
+            background-color: green;
+            right: 30px;
+            bottom: 100px;
+            line-height: 50px;
+            text-align: center;
+            display: none;
+        }
+
+        .container {
+            width: 900px;
+            height: 500px;
+            background-color: red;
+            margin: 400px auto;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="back">返回顶部</div>
+<div class="container"></div>
+<script>
+    $(function (){
+        // 赋值
+        // $(document).scrollTop($('.container').offset().top);
+        // 1.scrollTop()被卷去的头部
+        $(window).scroll(function (){
+            // console.log($(document).scrollTop());
+            if ($(document).scrollTop()>=$('.container').offset().top){
+                $('.back').fadeIn();
+            }else {
+                $('.back').fadeOut();
+            }
+        })
+        // 只有元素才能做动画,不能是文档,所以要用'body,html'
+        $('.back').click(function (){
+            $(document).scrollTop(0);
+            // $('body,html').animate({
+            //     scrollTop:0
+            // })
+        })
+
+    });
+</script>
+</body>
+</html>

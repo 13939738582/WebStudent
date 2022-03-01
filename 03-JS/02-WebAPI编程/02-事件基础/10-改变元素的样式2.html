@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .change {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<!--通过className更改元素样式-->
+<!--class="begin"-->
+<div></div>
+<script>
+    // 通过element.style改变样式（改变多种样式很麻烦）
+    var div = document.querySelector('div');
+    // var str = div.className;
+    div.onclick = function (){
+        // this.className != 'change'&&this.className!=(str+' change')
+        if (this.className == ''){
+            // 通过类名样式element.className操作改变样式
+            // 特点会覆盖原来的类名
+            this.className = 'change';
+            // 如果不想被覆盖 而是添加则
+            // this.className = str+' change';
+        }else {
+            this.className = '';
+            // this.className = str;
+        }
+    }
+</script>
+</body>
+</html>

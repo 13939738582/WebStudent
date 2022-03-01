@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            height: 150px;
+            background-color: red;
+            margin: 0 auto;
+        }
+        /*超小屏幕小于768*/
+        @media screen and (max-width: 767px) {
+            .container {
+                width: 100%;
+            }
+        }
+        /*小屏幕 大于等于768*/
+        @media screen and (min-width: 768px) {
+            .container {
+                width: 750px;
+            }
+        }
+        /*中等屏幕 992px */
+        @media screen and (min-width: 992px) {
+            .container {
+                width: 970px;
+            }
+        }
+        /*大屏幕 大于等于1200*/
+        @media screen and (min-width: 1200px) {
+            .container {
+                width: 1170px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container"></div>
+</body>
+</html>

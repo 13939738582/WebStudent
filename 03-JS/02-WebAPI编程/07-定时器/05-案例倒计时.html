@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        .box span {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            font-size: 40px;
+            text-align: center;
+            line-height: 60px;
+            color: white;
+            background-color: black;
+        }
+    </style>
+    <script>
+        window.addEventListener('load',fn);
+        function fn(){
+            var spans = document.querySelectorAll('span');
+            // dsq();
+            setInterval(function (){
+                // dsq();
+                var arr = conutDown('2022-01-25 18:00:00');
+                for (var i=0;i<arr.length;i++){
+                    spans[i].innerText = arr[i];
+                }
+            },1000);
+        }
+        // function dsq(){
+        //     var spans = document.querySelectorAll('span');
+        //     var arr = conutDown('2022-01-25 18:00:00');
+        //     for (var i=0;i<arr.length;i++){
+        //         spans[i].innerText = arr[i];
+        //     }
+        // }
+        function conutDown(time){
+            var arr = [];
+            var nowTime = +new Date();
+            var inputTime = +new Date(time);
+            var times = (inputTime-nowTime) / 1000;
+            var h = parseInt(times/60/60%24);
+            arr[0] = h<10?'0'+h:h;
+            var m = parseInt(times/60%60);
+            arr[1] = m<10?'0'+m:m;
+            var s = parseInt(times%60);
+            arr[2] = s<10?'0'+s:s;
+            return arr;
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</body>
+</html>

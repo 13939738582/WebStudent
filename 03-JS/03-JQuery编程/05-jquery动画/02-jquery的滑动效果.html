@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: none;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div></div>
+<script>
+    $(function (){
+        // 下拉滑动
+        $('button').eq(0).click(function (){
+            $('div').slideDown();
+        });
+        // 上拉滑动
+        $('button').eq(1).click(function (){
+            $('div').slideUp();
+        });
+        // 滑动切换
+        $('button').eq(2).click(function (){
+            $('div').slideToggle();
+        });
+    });
+</script>
+</body>
+</html>

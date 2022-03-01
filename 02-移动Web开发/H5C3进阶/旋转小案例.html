@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .far {
+            width: 300px;
+            height: 40px;
+            border: 2px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+        .son {
+            width: 15px;
+            height: 15px;
+            border-top: 2px solid red;
+            border-right: 2px solid red;
+            transform: rotate(135deg);
+            transition: all 1s;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+        div:hover .son {
+            transform: rotate(315deg);
+        }
+    </style>
+</head>
+<body>
+<div class="far">
+    <div class="son"></div>
+</div>
+</body>
+</html>

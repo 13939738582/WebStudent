@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*单行*/
+        div {
+            width: 900px;
+            height: 900px;
+            background-color: red;
+            display: flex;
+            /*沿着X轴正方向（默认）*/
+            /*主轴X或Y效果不同*/
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            /*特殊的——拉伸 子盒子不要给高度*/
+            /*align-items: stretch;*/
+        }
+        span {
+            width: 150px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+</div>
+</body>
+</html>

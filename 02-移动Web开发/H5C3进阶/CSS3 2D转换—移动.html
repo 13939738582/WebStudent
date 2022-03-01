@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transform: translate(500px,100px);
+            /*transform: translateX(100px);*/
+            /*transform: translateY(100px);*/
+        }
+        .box_1 {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .anli {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin: 200px auto;
+            transition: all .5s;
+        }
+        .anli:hover {
+            transform: translate(0px,-10px);
+            box-shadow: 10px 10px 10px 10px rgba(0,0,0,.6);
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<div class="box_1"></div>
+<div class="anli"></div>
+</body>
+</html>
+

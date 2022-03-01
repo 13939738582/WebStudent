@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="demo"></div>
+<!--自定义属性-->
+<p data-index="1" data-time="2" data-index-name="3"></p>
+<script>
+    // 获取元素的属性值(获取元素内置属性，元素自带的)
+    // 1.element.属性
+    var div = document.querySelector('div');
+    var p = document.querySelector('p');
+    console.log(div.id);
+
+    // 2.element.getAttribute('属性')(除了获取内置属性还可以获取自定义属性)
+    console.log(div.getAttribute('id'));
+    console.log(p.getAttribute('data-index'));
+
+    // h5新增的获取自定义属性值的方法element.dataset.自定义属性名(dataset是个集合可以获取所有的自定义属性)只能获取自定义属性
+    // console.log(p.dataset);
+    console.log(p.dataset.index);
+    console.log(p.dataset.time);
+    console.log(p.dataset.indexName);
+
+    // 设置更改属性值
+    // 1.element.属性 = 属性值
+    div.id = 'demo1';
+    console.log(div.id);
+
+    // 2.element.setAttribute('属性','值')(除了更改内置属性还可以更改自定义属性)
+    p.setAttribute('index',2);
+    console.log(p.getAttribute('index'));
+
+
+    // 移除属性
+    // element.removeAttribute('属性')
+    p.removeAttribute('index');
+</script>
+</body>
+</html>

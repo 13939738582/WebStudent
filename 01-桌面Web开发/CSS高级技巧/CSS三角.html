@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三角</title>
+    <style>
+        .box1 {
+            width: 0px;
+            height: 0px;
+            border: 200px solid transparent;
+            border-top-color: green;
+            border-right-color: blue;
+            border-bottom-color: red;
+            border-left-color: yellow;
+            margin-bottom: 100px;
+        }
+        .box2 {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .box3 {
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-bottom-color: red;
+            position: absolute;
+            left: 70px;
+            top: -40px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2">
+    <div class="box3"></div>
+</div>
+</body>
+</html>

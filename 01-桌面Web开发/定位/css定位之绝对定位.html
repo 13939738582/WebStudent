@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS定位之决对定位</title>
+    <style>
+        /*绝对定位absolute（不占有原来的位置）*/
+        .box {
+            position: relative;
+            /*top: 200px;*/
+            /*left: 200px;*/
+            width: 400px;
+            height: 400px;
+            background-color: green;
+            margin: 100px auto;
+        }
+        .box1 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            background-color: red;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box1"></div>
+    <div class="box2"></div>
+</div>
+</body>
+</html>

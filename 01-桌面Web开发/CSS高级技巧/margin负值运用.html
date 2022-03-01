@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin负值运用</title>
+    <style>
+        ul li {
+            position: relative;
+            float: left;
+            list-style: none;
+            width: 150px;
+            height: 200px;
+            border: 10px solid red;
+            margin-left: -10px;
+        }
+        ul li:hover {
+            /*如果盒子没有定位*/
+            /*position: relative;*/
+            /*border: 10px solid black;*/
+            /*如何盒子都有定位*/
+            z-index: 1;
+            border: 10px solid black;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+</html>

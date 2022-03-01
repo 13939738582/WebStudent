@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行内块元素中间有缝隙</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .div1 {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            /*display: inline-block;*/
+        }
+        .div2 {
+            width: 150px;
+            height: 150px;
+            background-color: green;
+            /*display: inline-block;*/
+        }
+        .div3 {
+            width: 150px;
+            height: 150px;
+            background-color: blue;
+            /*display: inline-block;*/
+            /*margin-left: 10px;*/
+        }
+        div {
+            float: left;
+        }
+        .div3 {
+            float: right;
+        }
+        /*.div3 {*/
+        /*    float: right;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<!--<div class="div2"></div>-->
+<div class="div3"></div>
+</body>
+</html>

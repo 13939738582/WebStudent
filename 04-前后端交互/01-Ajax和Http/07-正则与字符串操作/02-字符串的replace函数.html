@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // replace('123','abc') 函数可以将字符串中的某些字符替换为另外的字符
+        var str = '123456';
+        console.log(str.replace('123', 'abc'));
+
+        // 要求将花括号的内容替换为具体的文本
+        var str1 = '<div>我是{{name}}</div>';
+        reg1 = /{{([a-zA-Z]+)}}/;
+        console.log(str1.replace(reg1.exec(str1)[0], reg1.exec(str1)[1]));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #ccc;
+        }
+        .father {
+            width: 500px;
+            position: relative;
+            margin: 100px auto;
+        }
+        .box {
+            width: 250px;
+            height: 30px;
+            font-size: 20px;
+            line-height: 30px;
+            background-color: white;
+            position: relative;
+            display: none;
+        }
+        .box::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            width: 0;
+            height: 0;
+            border: transparent solid 20px;
+            border-top-color: white;
+        }
+        input {
+            width: 200px;
+            height: 15px;
+            font-size: 10px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="box"></div>
+    <input type="text" placeholder="请输入您的快递单号">
+</div>
+<script>
+    var inp = document.querySelector('input');
+    box = document.querySelector('.box');
+    console.log(inp.focus());
+    inp.addEventListener('keyup',function () {
+        box.style.display = 'block';
+        box.innerText = inp.value;
+        if (inp.value==''){
+            box.style.display = 'none';
+        }
+    });
+    // 失去焦点隐藏
+    inp.addEventListener("blur", function (){
+        box.style.display = 'none';
+    })
+    // 获得焦点并且内容不为空显示
+    inp.addEventListener("focus", function (){
+        if (inp.value!=''){
+            box.style.display = 'block';
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function runYear(year){
+            if ((year%100!=0 && year%4==0) || (year%100==0 && year%400==0)) {
+                return  '是闰年';
+            }else {
+                return '不是闰年';
+            }
+        }
+        var year = prompt("请输入年份");
+        alert(runYear(year));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

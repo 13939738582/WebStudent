@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var rg = /123/;
+        console.log(rg.test('a123'));
+        // 边界符 ^
+        var rg1 = /^123/;//必须以123开头
+        console.log(rg1.test('a123'));
+        // 边界符 $
+        var rg2 = /123$/;//必须以123结尾
+        console.log(rg2.test('a123'));
+
+        var rg3 = /^123$/;//必须以123开头结尾
+        console.log(rg3.test('a123'));
+        console.log(rg3.test(123));
+        // console.log(rg3.test(123123));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

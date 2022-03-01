@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // // 数据解构允许我们按照一一对应的关系从数组中提取值，然后将值赋值给变量
+        // let arr = [1,2,3];
+        // let [a,b,c] = arr;
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
+
+        // 对象解构(属性匹配)
+        let person = {
+            name:'张三',
+            age:18
+        }
+        // 变量名和属性名必须相同
+        let {name,age} = person;
+        console.log(name);
+        console.log(age);
+
+        // 变量名和属性名可以不相同
+        let {name:myName,age:myAge} = person;
+        console.log(myName);
+        console.log(myAge);
+
+        const node = {
+            loc:{
+                start:{
+                    line:'aaa',
+                    column:'bbb'
+                }
+            }
+        };
+        // 匹配column
+        let {loc,loc:{start},loc:{start:{column}}} = node;
+        console.log(column);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

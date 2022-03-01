@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            border-radius: 50%;
+            position: relative;
+            transition: all 8s;
+            margin: 200px auto;
+        }
+        .box div {
+            width: 60px;
+            height: 8px;
+            background-color: blue;
+            border-radius: 50%;
+        }
+        .box .cen {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            border-radius: 50%;
+        }
+        .box:hover .cen {
+            margin-top: 50%;
+            margin-left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .box div {
+            transition: all 1s;
+        }
+        .box:hover .div1 {
+            position: absolute;
+            top: 100px;
+            left: 16px;
+            background-color: red;
+        }
+        .box:hover .div2 {
+            position: absolute;
+            top: 100px;
+            left: 123px;
+            background-color: red;
+        }
+        .box:hover .div3 {
+            position: absolute;
+            transform: rotate(90deg);
+            top: 42px;
+            left: 69px;
+            background-color: red;
+        }
+        .box:hover .div4 {
+            position: absolute;
+            transform: rotate(90deg);
+            top: 150px;
+            left: 69px;
+            background-color: red;
+        }
+        .box:hover {
+            transform: rotate(1800deg);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="cen"></div>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+</div>
+</body>
+</html>

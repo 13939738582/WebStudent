@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Con(color,wite,logo,type){
+            this.color = color;
+            this.wite =wite;
+            this.logo = logo;
+            this.type = type;
+            this.move = function (mo){
+                console.log(mo);
+            }
+            this.misic = function (mi){
+                console.log(mi);
+            }
+            this.game = function (ga){
+                console.log(ga);
+            }
+            this.code = function (co){
+                console.log(co);
+            }
+        }
+        var dell = new Con('黑色','2.4kg','戴尔','G7500');
+        for (var key in dell){
+            console.log(dell[key]);
+        }
+        dell.move('泰坦尼克号');
+        dell.misic('套马的汉子');
+        dell.game('LOL');
+        dell.code('JavaScript');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

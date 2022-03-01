@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<a href="http://www.baidu.com" title="百度">百度</a>
+<div index="1" data-index="2"></div>
+<span>aaa</span>
+<script>
+    $(function (){
+        // element.prop('属性名') 获取属性值
+        console.log($('a').prop('href'));
+        console.log($('a').prop('title'));
+        // 设置属性值  element.prop('属性名',属性值)
+        $('a').prop('title','腾讯');
+
+        // 自定义属性
+        console.log($('div').attr('index'));
+        console.log($('div').attr('data-index'));
+        // console.log($('a').attr('href'));
+
+        // 数据缓存data() 把值放到了对应元素的内存中，DOM中不可见
+        $('span').data('stuname','tom');
+        console.log($('span').data('stuname'));
+        // 使用data方法获取H5自定义属性不需要加data- 并且返回的是数字型（前提是属性值为数字）
+        console.log($('div').data('index'));
+    });
+</script>
+</body>
+</html>

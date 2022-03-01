@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 900px;
+            margin: 100px auto;
+            text-align: center;
+            position: relative;
+        }
+        .box input {
+            height: 40px;
+        }
+        .box button {
+            display: block;
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            left: 45%;
+            top: 60px;
+            font-size: 30px;
+        }
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <lable>姓名</lable><input type="text">
+    <lable>科目</lable><input type="text">
+    <lable>成绩</lable><input type="text">
+    <button>添加</button>
+</div>
+<table cellspacing="0">
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>科目</th>
+        <th>成绩</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<script>
+    // 准备学生数据利用数组对象存储
+    var datas = [
+        {
+            name:'张三',
+            subject:'JavaScript',
+            score:100
+        },
+        {
+            name:'李四',
+            subject:'JavaScript',
+            score:99
+        },
+        {
+            name:'王五',
+            subject:'JavaScript',
+            score:85
+        },
+        {
+            name:'刘六',
+            subject:'JavaScript',
+            score:89
+        }
+    ];
+    // 在tbody里面创建行
+    var tb = document.querySelector('tbody');
+    for (var i=0;i<datas.length;i++){
+        var tr = document.createElement('tr');
+        tb.appendChild(tr);
+        // 在行里面创建单元格
+        for (var key in datas[i]){
+            var td = document.createElement('td');
+            // 把对象里面的值给td
+            td.innerHTML = datas[i][key];
+            tr.appendChild(td);
+        }
+        // 创建删除单元格
+        var tdd = document.createElement('td');
+        tdd.innerHTML = '<a href="javascript:;">删除</a>'
+        tr.appendChild(tdd);
+    }
+    // 添加删除功能
+    var as = document.querySelectorAll('a');
+    for (var i=0;i<as.length;i++){
+        as[i].onclick = function (){
+            tb.removeChild(this.parentNode.parentNode);
+        }
+    }
+    // 增加功能
+    var inps = document.querySelectorAll('input');
+    var btn = document.querySelector('button');
+    btn.onclick = function (){
+        var tr = document.createElement('tr');
+        tb.appendChild(tr);
+        for (var i=0;i<inps.length;i++){
+            var  td = document.createElement('td');
+            td.innerHTML = inps[i].value;
+            console.log(inps[i].value);
+            tr.appendChild(td);
+        }
+        var tdd = document.createElement('td');
+        tdd.innerHTML = '<a href="javascript:;">删除</a>'
+        tr.appendChild(tdd);
+
+        // 添加删除功能
+        var as = document.querySelectorAll('a');
+        for (var i=0;i<as.length;i++){
+            as[i].onclick = function (){
+                tb.removeChild(this.parentNode.parentNode);
+            }
+        }
+    }
+</script>
+</body>
+</html>

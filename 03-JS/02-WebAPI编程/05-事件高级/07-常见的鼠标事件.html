@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+我是一段不想被复制文字
+<script>
+    // 禁止鼠标右键
+    document.addEventListener("contextmenu", function (e){
+        e.preventDefault();
+    });
+    // 禁止鼠标选中
+    document.addEventListener("selectstart", function (e){
+       e.preventDefault();
+    });
+    document.addEventListener("click", function (e){
+        // 获取可视区域的X Y 坐标
+        console.log(e.clientX);
+        console.log(e.clientY);
+        console.log('--------------------------------');
+        // 获取文档页面的 X Y坐标
+        console.log(e.pageX);
+        console.log(e.pageY);
+        console.log('--------------------------------');
+        // 获取相对于电脑屏幕的X  Y坐标
+        console.log(e.screenX);
+        console.log(e.screenY);
+        console.log('--------------------------------');
+    })
+</script>
+</body>
+</html>

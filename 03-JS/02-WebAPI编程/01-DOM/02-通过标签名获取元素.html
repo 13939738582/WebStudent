@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>我是奥特曼1</li>
+    <li>我是奥特曼2</li>
+    <li>我是奥特曼3</li>
+    <li>我是奥特曼4</li>
+    <li>我是奥特曼5</li>
+</ul>
+
+<ul id="ull">
+    <li>我是小怪兽1</li>
+    <li>我是小怪兽2</li>
+    <li>我是小怪兽3</li>
+    <li>我是小怪兽4</li>
+    <li>我是小怪兽5</li>
+</ul>
+<script>
+    var lis = document.getElementsByTagName('li');
+    console.log(lis);
+    console.log(typeof lis);//返回的是获取的元素的对象的集合，以伪数组的方式存取
+    console.log(lis[0]);
+    for (var key in lis){
+        console.log(lis[key]);
+    }
+
+
+    // 获取某个元素里面的标签Element.getElementsByTagName()
+    var lis1 = document.getElementById('ull').getElementsByTagName('li')
+    for (var i =0 ;i<lis1.length;i++){
+        console.log(lis1[i]);
+    }
+</script>
+</body>
+</html>

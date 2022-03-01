@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Hero(uname,type,blood){
+            this.name = uname;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function (att){
+                console.log(att);
+            }
+        }
+        //new关键字的执行过程
+        //1.new构造函数首先会在内存中创建一个空的对象
+        // 2.this会指向刚才创建的对象
+        // 3.执行构造函数代码，给这个对象添加属性和方法
+        // 4.返回这个对象
+        var lp = new Hero('廉颇','力量型',500);
+        var hy = new Hero('后羿','射手型',100);
+        console.log(lp.name);
+        console.log(lp.type);
+        console.log(lp.blood);
+        lp.attack('近战');
+        console.log('---------------------------');
+        console.log(hy.name);
+        console.log(hy.type);
+        console.log(hy.blood);
+        hy.attack('远程');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

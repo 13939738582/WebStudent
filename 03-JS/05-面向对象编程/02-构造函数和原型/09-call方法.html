@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function sing(age){
+            console.log(this.name+'会唱歌,他今年'+age+'岁了');
+            // 这里面的this指向了window
+            console.log(this);
+        }
+        sing(44);
+        // 函数名.call()也可以调用函数
+        // sing.call();
+        // 要修改this指向，指向我们自己定义的一个对象
+        var obj = {
+            name:'刘德华'
+        }
+        sing.call(obj,44);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

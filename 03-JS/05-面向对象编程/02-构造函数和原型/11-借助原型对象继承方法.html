@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 借助原型对象继承方法
+        // 1.父构造函数
+        function Father(user , password) {
+            this.username = user;
+            this.passworld = password;
+        }
+        Father.prototype = {
+            constructor:Father,
+            sing : function (){
+                console.log('爱唱歌');
+            },
+            eat : function (){
+                console.log('会吃饭');
+            }
+        }
+        // 2.子构造函数
+        function Son(user , password) {
+            Father.call(this,user,password);
+        }
+
+        // 首先想到的是，直接把父原型对象给子原型对象，但是这样做会产生一个问题
+        // 就是父原型对象是把指针给了子原型对象，那么如果后续我们对子原型对象进行增删方法的时候会影响父原型对象(这种方法是错误的)
+        // Son.prototype = Father.prototype;
+        // Son.prototype.move = function (){
+        //     console.log('跑跑跑');
+        // }
+        // console.log(Son.prototype);
+        // console.log(Father.prototype)
+
+        // 正确的做法
+        // 首先声明一个父构造函数的实例化对象，让子构造函数的原型对象指向它
+        Son.prototype = new Father();
+        // 利用对象的形式修改了原型对象，需要利用constructor重新指回自己的本身
+        Son.prototype.constructor = Son;
+        // 因为父构造函数的实例化对象里面有一个原型__proto__，该原型指向了父原型对象，而父原型对象里面有父构造函数的一些方法
+        // 这样我们就可以通过子构造函数的原型对象来访问父构造函数的原型对象
+        console.log(Son.prototype.__proto__);
+        // 也可以添加自己独有的方法
+        Son.prototype.move = function (){
+            console.log('跑跑跑');
+        }
+        console.log(Son.prototype);
+
+
+        var son = new Son('我是小木瓜','abc123');
+        console.log(son);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3新增的结构伪类选择器</title>
+    <style>
+        /*1.选择第一个孩子*/
+
+        /*ul li:first-child {*/
+        /*    color: red;*/
+        /*}*/
+
+        /*!*!*2.选择最后一个孩子*!*!*/
+
+        /*ul li:last-child {*/
+        /*    color: blue;*/
+        /*}*/
+
+        /*!*3.选择任意一个孩子*!*/
+
+        /*ul li:nth-child(3) {*/
+        /*    color: green;*/
+        /*}*/
+
+        /*!*4.选择奇偶*!*/
+        /* ul li:nth-child(even) {*/
+        /*     background-color: orange;*/
+        /* }*/
+        /* ul li:nth-child(odd) {*/
+        /*     background-color: gray;*/
+        /* }*/
+
+        /* !*5.nth-child(n) 从0开始，每次加一，往后计算 这里面必须是n 不能是其他字母 选择了所有的孩子*!*/
+        /*ol li:nth-child(n) {*/
+        /*    background-color: red;*/
+        /*}*/
+        /*section div:nth-of-type(1){*/
+        /*    color: red;*/
+        /*}*/
+
+        /*指定类型的任意一个*/
+        /*ul p:nth-of-type(2){*/
+        /*    color: red;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <p id="p1" class="p2 p3">我是P标签</p>
+    <li>我是第一个孩子</li>
+    <li>我是第二个孩子</li>
+    <p>我是P标签</p>
+    <li>我是第三个孩子</li>
+    <li>我是第四个孩子</li>
+    <li>我是第五个孩子</li>
+    <li>我是第六个孩子</li>
+    <li>我是第七个孩子</li>
+    <li>我是第八个孩子</li>
+    <p>我是P标签</p>
+</ul>
+
+<ol>
+    <li>我是第一个孩子</li>
+    <li>我是第二个孩子</li>
+    <li>我是第三个孩子</li>
+    <li>我是第四个孩子</li>
+    <li>我是第五个孩子</li>
+    <li>我是第六个孩子</li>
+    <li>我是第七个孩子</li>
+    <li>我是第八个孩子</li>
+</ol>
+<section>
+    <p>光头强</p>
+    <div>熊大</div>
+    <div>熊二</div>
+</section>
+</body>
+</html>

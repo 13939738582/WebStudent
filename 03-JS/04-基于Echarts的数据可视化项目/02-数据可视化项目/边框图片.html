@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 400px;
+            height: 300px;
+            border: 15px solid red;
+            border-image-source: url("img/border.jpg");
+            border-image-slice: 30;
+            /*这个属性默认是边框的宽度，但是这个属性是边框图片的宽度而非边框宽度*/
+            border-image-width: 30px;
+            /*border-image-repeat: repeat;*/
+            border-image-repeat: round;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 中括号 字符集合，匹配中括号内的任意字符
+        var rg = /^[A-Z]$/;//A-Z的多选择一
+        console.log(rg.test('A'));
+
+        // 大括号 量词符。表示重复次数
+        var rg1 = /^abc{2}$/;//让c重复2次
+        console.log(rg1.test('abcabc'));
+        console.log(rg1.test('abcc'));
+
+        // 小括号 表示优先级
+        var rg2 = /^(abc){2}$/;//让abc重复2次
+        console.log(rg2.test('abcabc'));
+        console.log(rg2.test('abcc'));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="yeye">
+    <div class="father">
+        <div class="son">儿子</div>
+    </div>
+</div>
+
+<div class="nav">
+    <p>p</p>
+    <div>
+        <p>p</p>
+    </div>
+</div>
+
+<ol>
+    <li>我是ol 的li</li>
+    <li>我是ol 的li</li>
+    <li class="item">我是ol 的li</li>
+    <li>我是ol 的li</li>
+    <li>我是ol 的li</li>
+    <li>我是ol 的li</li>
+</ol>
+<ul>
+    <li>我是ul 的li</li>
+    <li>我是ul 的li</li>
+    <li>我是ul 的li</li>
+    <li>我是ul 的li</li>
+    <li>我是ul 的li</li>
+    <li>我是ul 的li</li>
+</ul>
+<script>
+    $(function (){
+        // 1.选取父级 parent()方法返回最近一级的父级元素
+        console.log($('.son').parent());
+        console.log($('.son').parent().parent());
+        // 2.选取子级
+        // 只选最近一级的子元素
+        console.log($('.nav').children());
+        // 选取所有的子代
+        console.log($('.nav').find('p'));
+        $('.nav').find('p').css('color','red');
+        // 3.选取兄级
+        // 选取兄弟元素 不包含自己
+        $('ol .item').siblings('li').css('color','green');
+        // 选取自己后面的所有兄弟元素
+        $('ul li:eq(2)').nextAll('li').css('color','green');
+        // 选取自己前面的所有兄弟元素
+        $('ul li:eq(2)').prevAll('li').css('color','red');
+        // 4.选择第几个元素
+        $('ul li').eq(2).css('background','yellow');
+        // 5.判断是否有某个类名  有返回true 没有返回false
+        if ($('ol li').eq(2).hasClass('item')){
+            alert('我有呀');
+        }else {
+            alert('我没有');
+        }
+    })
+</script>
+</body>
+</html>

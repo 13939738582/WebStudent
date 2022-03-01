@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var rg = /^\d{2}$/;//相当于[0-9]
+        console.log(rg.test(12));
+
+        var rg1 = /^\D{2}$/;//相当于[^0-9]
+        console.log(rg1.test(12));
+
+        var rg2 = /^\w{4}$/;//相当于[A-Za-z0-9_]
+        console.log(rg2.test('Aa9_'));
+
+        var rg3 = /^\W{4}$/;//相当于[^A-Za-z0-9_]
+        console.log(rg3.test('Aa9_'));
+
+        var rg4 = /^\s{4}$/;//相当于[\t\r\n\v\f]
+        console.log(rg4.test(' \n\t\v'));
+
+        var rg5 = /^\S{4}$/;//相当于[^\t\r\n\v\f]
+        console.log(rg5.test(' \n\t\v'));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--有兼容性问题-->
+<div class="box">盒子1</div>
+<div class="box">盒子2</div>
+<div id="nav">
+    <ul>
+        <li>首页</li>
+        <li>产品</li>
+    </ul>
+</div>
+<script>
+    // 根据类型获取元素
+    var box1 = document.getElementsByClassName('box');
+    console.log(box1);
+
+    // querySelector()返回指定选择器的第一个元素(选择器需要加符号 #  .)
+    var box2 = document.querySelector('.box');
+    console.log(box2);
+
+    console.log(document.querySelector('#nav'));
+
+    console.log(document.querySelector('li'));
+
+    // querySelectorAll()返回指定选择器的所有元素
+    console.log(document.querySelectorAll('.box'));
+
+    console.log(document.querySelectorAll('li'));
+</script>
+</body>
+</html>

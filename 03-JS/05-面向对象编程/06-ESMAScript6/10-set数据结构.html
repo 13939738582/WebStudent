@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 创建set数据结构
+        const s = new Set([1,2,3]);
+        console.log(s);
+        // 这里注意求set的长度是size而非length
+        console.log(s.size);
+
+        // 应用：数据去重
+        let arr = [1,1,2,2,3,3,4,4,4,4,5];
+        const s1 = new Set(arr);
+        arr = Array.from(s1);
+        // // 或者
+        // arr = [...s1];
+        console.log(arr);
+
+        // set的实例方法
+        const s2 = new Set();
+        // 向set中添加数据(add()可以链式调用)
+        s2.add(1).add(2).add(3);
+        console.log(s2);
+        // 删除set中的数据
+        s2.delete(1);
+        console.log(s2);
+        // 查找set中是否有某个元素
+        console.log(s2.has(2));
+        // 清空set
+        s2.clear();
+        console.log(s2);
+
+        // 遍历set
+        const s3 = new Set([1,2,3,4,5]);
+        s3.forEach(value => console.log(value));
+        var sum = 0;
+        s3.forEach(value => {
+            sum+=value;
+        });
+        console.log(sum);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

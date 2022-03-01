@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            display: none;
+        }
+        .son {
+            width: 100px;
+            height: 20px;
+            background-color: red;
+        }
+        .son:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="username">
+<input type="checkbox" id="remember">记住用户名
+<button>清空</button>
+<div class="box"></div>
+<script>
+    var username = document.querySelector('#username');
+    var remember = document.querySelector('#remember');
+    var box = document.querySelector('.box');
+    var btn = document.querySelector('button');
+    btn.addEventListener('click',function (){
+        localStorage.clear();
+    });
+    username.addEventListener('focus',function (){
+        for (var i=0;i<localStorage.length;i++){
+            box.style.display = 'block';
+            var div1 = document.createElement('div');
+            div1.innerHTML = localStorage.getItem('username'+i);
+            div1.className = 'son';
+            box.appendChild(div1);
+        }
+        var div = box.querySelectorAll('div');
+        for (var i=0;i<div.length;i++){
+            div[i].addEventListener('mouseover',function (){
+                console.log(this.innerText);
+                username.value = this.innerHTML;
+            })
+        }
+        if (remember.checked){
+            var flag = true;
+            for (var i=0;i<localStorage.length;i++){
+                if (username.value==localStorage.getItem('username'+i)||username.value==''){
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag){
+                localStorage.setItem('username'+localStorage.length,username.value);
+            }
+            // this.checked = false;
+        }
+    });
+    username.addEventListener('blur',function (){
+        box.style.display = 'none';
+        while (true){
+            if (box.children.length!=0){
+                box.removeChild(box.children[box.children.length-1])
+            } else {
+                break;
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 900px;
+            margin: 100px auto;
+            text-align: center;
+            position: relative;
+        }
+        .box input {
+            width: 50px;
+            height: 40px;
+            font-size: 25px;
+            text-align: center;
+        }
+        .box .btnn {
+            display: block;
+            width: 150px;
+            height: 50px;
+            position: absolute;
+            left: 41%;
+            top: 65px;
+            font-size: 30px;
+        }
+        .box .btnn2 {
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            background-color: skyblue;
+            cursor: pointer;
+        }
+        .box .btnn2:hover {
+            background-color: red;
+        }
+        table {
+            width: 1000px;
+            margin: 159px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td,
+        th {
+            border: 1px solid #333;
+        }
+        th {
+            font-size: 30px;
+            height: 50px;
+        }
+        td {
+            font-size: 20px;
+            height: 30px;
+        }
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+        .jt {
+            width: 150px;
+            height: 50px;
+            font-size: 30px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid #ccc;
+            position: absolute;
+            top: 150px;
+            left: 41%;
+        }
+        .logo {
+            width: 200px;
+            height: 60px;
+            font-size: 30px;
+            line-height: 60px;
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            left: 44%;
+            animation-name: co;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            cursor: pointer;
+        }
+        @keyframes co {
+            0% {
+                background-color: #36C3A7;
+                color: #0080FF;
+            }
+            25% {
+                background-color: #6AD45A;
+                color: #FE2EF7;
+            }
+            50% {
+                background-color: #53BAED;
+                color: #40FF00;
+            }
+            75% {
+                background-color: #4C91ED;
+                color: #F7FE2E;
+            }
+            100% {
+                background-color: #FA984E;
+                color: #DF3A01;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <lable>排数</lable><input type="text">
+    <lable>列数</lable><input type="text">
+    <lable>人数</lable><input type="text">
+    <div class="jt">讲台</div>
+    <button class="btnn">点击排位</button>
+    <button class="btnn2">重排</button>
+</div>
+<table cellspacing="0"></table>
+<script>
+    var btn = document.querySelector('.btnn');
+    var sp = document.querySelector('.btnn2');
+    sp.disabled = true;
+    sp.onclick = function (){
+        var table = document.querySelector('table');
+        table.removeChild(table.childNodes[0]);
+        table.removeChild(table.childNodes[0]);
+        btn.disabled = false;
+        sp.disabled = true;
+        var inps = document.querySelectorAll('input');
+        for (var i=0;i<inps.length;i++){
+            inps[i].value = '';
+        }
+    }
+    btn.onclick = function (){
+        var table = document.querySelector('table');
+        var inps = document.querySelectorAll('input');
+        if (inps[0].value=='' || inps[1].value=='' || inps[2].value==''){
+            alert("请输入完整的数据");
+        }else {
+            var sum = inps[0].value*inps[1].value;
+            var sum1 = inps[2].value
+            if (sum<sum1){
+                alert("座位不够，请从新添加座位");
+            }else{
+                var table = document.querySelector('table');
+                var thead = document.createElement('thead');
+                var tbody = document.createElement('tbody');
+                table.appendChild(thead);
+                table.appendChild(tbody);
+                var thr = document.createElement('tr');
+                thead.appendChild(thr);
+                for (var i=0;i<inps[1].value;i++){
+                    var th = document.createElement('th');
+                    th.innerText = '第'+(i+1)+'列';
+                    thr.appendChild(th);
+                }
+                //随机排位置功能
+                var arr = [];
+                for (var i=0;i<inps[2].value;i++){
+                    arr[i]=i+1;
+                }
+                arr.sort(
+                    function (){
+                        return 0.5-Math.random();
+                    }
+                )
+                //将随机数丢到表格中
+                var k=0;
+                var bj = true;
+                for (var i=0;i<inps[0].value;i++){
+                    // 创建主体行
+                    var tr = document.createElement('tr');
+                    tbody.appendChild(tr);
+                    // 创建主体里面的单元格
+                    for (var j=0;j<inps[1].value;j++){
+                        var td = document.createElement('td');
+                        td.innerText = arr[k++];
+                        tr.appendChild(td);
+                        if (k==arr.length){
+                            bj = false;
+                            break;
+                        }
+                    }
+                    if (!bj){
+                        break;
+                    }
+                }
+            }
+        }
+        btn.disabled = true;
+        sp.disabled = false;
+    }
+    var logo = document.createElement('div');
+    logo.innerText = '封子墨制作';
+    document.body.appendChild(logo);
+    logo.className = 'logo';
+    logo.onclick = function (){
+        alert("不要点我！！！！！");
+    }
+</script>
+</body>
+</html>

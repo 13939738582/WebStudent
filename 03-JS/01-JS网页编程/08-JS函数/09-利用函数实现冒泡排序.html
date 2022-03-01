@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function sort(arr){
+            for (var i=0;i<arr.length;i++){
+                for (var j=0;j<arr.length-i-1;j++){
+                    if (arr[j]>arr[j+1]){
+                        var temp;
+                        temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                    }
+                }
+            }
+            for (var i=0;i<arr.length;i++){
+                console.log(arr[i]);
+            }
+        }
+        var arr = [3,2,1,6,5,4];
+        sort(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

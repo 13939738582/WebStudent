@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 600px;
+            height: 400px;
+            background-color: red;
+            display: flex;
+            /*同时移动*/
+            /*align-items: flex-end;*/
+        }
+        span {
+            width: 150px;
+            height: 100px;
+            background-color: green;
+            margin: 5px 10px;
+        }
+        /*只移动某一个*/
+        div span:nth-child(2) {
+            align-self: flex-end;
+        }
+        /*排列*/
+        div span:nth-child(1) {
+           order: 2;
+        }
+        div span:nth-child(2) {
+           order: 0;
+        }
+        div span:nth-child(3) {
+           order: 1;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+</div>
+</body>
+</html>

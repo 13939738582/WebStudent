@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*rem可以通过修改html里面的文字大小来修改页面中元素的大小*/
+        html {
+            font-size: 15px;
+        }
+        div:first-child {
+            font-size: 12px;
+            width: 20rem;
+            height: 20rem;
+            background-color: green;
+        }
+        /*em是相当于父元素的字体大小来说的*/
+        /*rem的基准是相对于html元素的字体大小*/
+        div:first-child p {
+            /*width: 10em;*/
+            /*height: 10em;*/
+            width: 10rem;
+            height: 10rem;
+            background-color: red;
+        }
+        div:nth-child(2) {
+            width: 30rem;
+            height: 30rem;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p></p>
+</div>
+<div>
+</div>
+</body>
+</html>

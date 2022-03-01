@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div></div>
+<script>
+    $(function (){
+        $('button').eq(1).click(function (){
+            // 显示
+            $('div').hide(1000,'linear',function (){
+                // 当动画结束执行回调函数
+                // alert(111);
+            });
+        });
+        // 隐藏
+        $('button').eq(0).click(function (){
+            $('div').show(1000,'linear',function (){
+                // 当动画结束执行回调函数
+                // alert(111);
+            });
+        });
+        // 切换
+        $('button').eq(2).click(function (){
+            $('div').toggle(1000,'linear',function (){
+                // 当动画结束执行回调函数
+                // alert(111);
+            });
+        });
+    })
+</script>
+</body>
+</html>

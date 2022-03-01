@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function add1(num1,num2){
+            return num1+num2;
+        }
+        function add2(num1,num2){
+            return num1-num2;
+        }
+        function add3(num1,num2){
+            return num1*num2;
+        }
+        function add4(num1,num2){
+            return num1/num2;
+        }
+
+        while(true){
+            var a = prompt('欢迎使用简易计算器；\n1.加法运算；\n2.减法运算；\n3.乘法运算；\n4.除法运算；\n5.退出；\n请输入您的选项：');
+            if (a=='5'){
+                break;
+            }
+            switch (a){
+                case '1':
+                    var b = parseFloat(prompt('请输入一个数值'));
+                    var c = parseFloat(prompt('请输入一个数值'));
+                    alert(add1(b,c));
+                    break;
+                case '2':
+                    var b = parseFloat(prompt('请输入一个数值'));
+                    var c = parseFloat(prompt('请输入一个数值'));
+                    alert(add2(b,c));
+                    break;
+                case '3':
+                    var b = parseFloat(prompt('请输入一个数值'));
+                    var c = parseFloat(prompt('请输入一个数值'));
+                    alert(add3(b,c));
+                    break;
+                case '4':
+                    var b = parseFloat(prompt('请输入一个数值'));
+                    var c = parseFloat(prompt('请输入一个数值'));
+                    alert(add4(b,c));
+                    break;
+                default:
+                    alert("您输入的不符合要求");
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

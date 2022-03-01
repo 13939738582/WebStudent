@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // var sum = 1;
+        function fn(n){
+            // if (n==1){
+            //     console.log(sum);
+            //     return;
+            // }
+            // sum *= n;
+            // n--;
+            // fn(n);
+
+
+            if (n==1){
+                return 1;
+            }
+            return n * fn(n-1);
+        }
+        // fn(5);
+        console.log(fn(5));
+
+        // if (n==1){
+        //     return 1;
+        // }
+        // return n * fn(n-1);的思路
+        // 以fn(3)为例：
+        // 第一步：
+        // 3*fn(2) 但是fn(2)并不是一个数，所以需要接着计算
+        // 第二步：
+        // 3*(2*fn(1))，同理需要计算fn(1)
+        // 第三步：
+        // 3*(2*(fn(1)变成了1))就是3*(2*(1))
+        // 最后挨个返回，从里到外计算1*2*3=6
+    </script>
+</head>
+<body>
+
+</body>
+</html>

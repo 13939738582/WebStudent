@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var str = 'abaasdffggghhjjkkgfddsssss3444343';
+        // 1.字符串的长度
+        console.log(str.length);
+
+        // 2.取出指定位置的字符  0 3 5 9
+        console.log(str.charAt(0)+'   '+str.charAt(3)+'   '+str.charAt(5)+'   '+str.charAt(9)+'   ');
+
+        // 3.查找指定字符是否在字符串中存在，如 i  c  b等
+        function getStr(str,s){
+            if (str.indexOf(s)!=-1){
+                return '存在';
+            }else{
+                return '不存在';
+            }
+        }
+        console.log(getStr(str,'i'));
+        console.log(getStr(str,'c'));
+        console.log(getStr(str,'b'));
+
+        // 4.替换指定的字符  将g替换为22，ss替换为b
+        function replacer(str,s1,s2){
+            while(str.indexOf(s1) !== -1){
+                str = str.replace(s1,s2);
+            }
+            return str;
+        }
+        console.log(str);
+        console.log(replacer(str,'g','22'));
+        console.log(replacer(str,'ss','b'));
+
+        // 5.截取指定开始位置到结束位置的字符串 如：取得1-5的字符串
+        console.log(str.substr(0,5));
+
+        // 6.找出以上字符串中出现最多的字符和出现的次数
+        var obj = {};
+        function getMax(str){
+            for (var i=0;i<str.length;i++){
+                if (obj[str.charAt(i)]){
+                    obj[str.charAt(i)] += 1;
+                }else {
+                    obj[str.charAt(i)] = 1;
+                }
+            }
+
+            var max = 0;
+            var ch = '';
+            for (var key in obj){
+                if (obj[key]>max){
+                    max = obj[key];
+                    ch = key;
+                }
+            }
+            return '最多的字符是'+ch+'   有'+max+'个';
+        }
+        console.log(str);
+        console.log(getMax(str));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

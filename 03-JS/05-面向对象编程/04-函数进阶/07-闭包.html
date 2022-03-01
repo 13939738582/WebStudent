@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 闭包指有权访问另一个函数作用域中的变量的函数
+        function fn(){
+            var num = 10;
+            // 在fn作用域内的函数访问fn的变量
+            // function sonfn(){
+            //     console.log(num);
+            // }
+            // sonfn();
+            // return sonfn;
+            return function (){
+                console.log(num);
+            }
+        }
+        // fn();
+
+        // 在fn作用域外的函数访问fn的变量
+        var f = fn();
+        // 闭包的主要作用：延伸了变量的作用范围,只有当所有的函数执行完成后，num才会销毁
+        f();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

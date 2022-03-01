@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /*动画名称*/
+            animation-name: move;
+            /*花费时间*/
+            animation-duration: 5s;
+        }
+        @keyframes move {
+            /*开始状态*/
+            0% {
+                transform: translateX(0px);
+            }
+            /*结束状态*/
+            100% {
+                transform: translateX(1000px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

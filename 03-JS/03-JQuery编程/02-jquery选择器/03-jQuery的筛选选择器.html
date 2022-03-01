@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<ul>
+    <li>多个里面筛选几个</li>
+    <li>多个里面筛选几个</li>
+    <li>多个里面筛选几个</li>
+    <li>多个里面筛选几个</li>
+    <li>多个里面筛选几个</li>
+    <li>多个里面筛选几个</li>
+</ul>
+<ol>
+    <li>多个里面筛选几个</li>
+    <li>多个里面筛选几个</li>
+    <li>多个里面筛选几个</li>
+    <li>多个里面筛选几个</li>
+    <li>多个里面筛选几个</li>
+    <li>多个里面筛选几个</li>
+</ol>
+<script>
+    $(function (){
+        $('ul li:first').css('background','red');
+        $('ul li:last').css('background','green');
+        $('ul li:eq(2)').css('background','yellow');
+        // 是索引号的奇偶，而非元素位置的奇偶
+        $('ol li:odd').css('background','blue');
+        $('ol li:even').css('background','red');
+    })
+</script>
+</body>
+</html>

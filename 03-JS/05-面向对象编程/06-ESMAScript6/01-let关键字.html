@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        if (true){
+            var a=10;
+        }
+        console.log(a);
+        // let 关键字声明的变量只能作用于块级作用域
+        if (true){
+            let b=10;
+            console.log(b);
+        }
+        console.log(b);
+
+        // for(var i=0;i<10;i++){
+        //
+        // }
+        // console.log(i);
+        //
+        // for(let j=0;j<10;j++){
+        //
+        // }
+        // console.log(j);
+
+        // let 关键字声明的变量没有变量提升
+        // console.log(num);
+        // // var num = 20;
+        // let num = 20;
+
+        // let 关键字声明的变量具有暂时性死区
+        // var temp = 20;
+        // if (true){
+        //     console.log(temp);
+        //     // let temp = 30;
+        // }
+
+
+        // let arr = [];
+        // for (let i=0;i<2;i++){
+        //     arr[i] = function (){
+        //         console.log(i);
+        //     }
+        // }
+        // arr[0]();
+        // arr[1]();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

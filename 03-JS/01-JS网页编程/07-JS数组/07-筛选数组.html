@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr = [2,0,6,1,77,0,52,0,25,7];
+        // 方法一
+        var arr1 = [];
+        for (var i=0;i<arr.length;i++){
+            if (arr[i]>=10){
+                arr1[arr1.length]=arr[i];
+            }
+        }
+        for (var i=0;i<arr1.length;i++){
+            console.log(arr1[i]);
+        }
+        console.log('----------------------');
+        // 方法二
+        for (var i=0;i<arr.length;i++){
+            if (arr[i]<10){
+                for (j=i;j<arr.length-1;j++){
+                    arr[j]=arr[j+1];
+                }
+                i--;
+                arr.length--
+            }
+        }
+        for (var i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

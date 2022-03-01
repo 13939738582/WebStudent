@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function revrese(arr){
+            if (arr instanceof Array){
+                var newArr = [];
+                for (var i = arr.length-1;i>=0;i--){
+                    newArr[newArr.length] = arr[i];
+                }
+                return newArr;
+            }else {
+                return '这个参数要求是数组格式[1,2,3]';
+            }
+
+            // if (Array.isArray(arr)){
+            //     var newArr = [];
+            //     for (var i = arr.length-1;i>=0;i--){
+            //         newArr[newArr.length] = arr[i];
+            //     }
+            //     return newArr;
+            // }else {
+            //     return '这个参数要求是数组格式[1,2,3]';
+            // }
+
+        }
+        console.log(revrese([1,2,3]));
+        console.log(revrese(1,2,3));
+
+        // 利用instanceof运算符检测是否为数组
+        var arr = [];
+        console.log(arr instanceof Array);
+        var obj = {};
+        console.log(obj instanceof Array);
+
+        //js为我们提供了一种判断是否是数组的方法(H5新增的,有兼容性问题)
+        console.log(Array.isArray(arr));
+        console.log(Array.isArray(obj));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div></div>
+<input type="text">
+<script>
+    $(function (){
+        $('div').on('click',function (){
+            console.log(11);
+        });
+        // 自动触发
+        // 1.
+        $('div').click();
+        // 2.
+        $('div').trigger('click');
+        // 3.和前面的区别是，不会触发元素的默认行为
+        $('div').triggerHandler('click');
+        $('input').on('focus',function (){
+            $(this).val('德玛西亚');
+        })
+        // $('input').triggerHandler('focus');
+        // $('input').focus();
+    });
+</script>
+</body>
+</html>

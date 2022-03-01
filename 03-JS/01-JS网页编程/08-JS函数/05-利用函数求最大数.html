@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 利用函数求两个数的最大值
+        function max(a,b){
+            if (a>b){
+                return a;
+            }else {
+                return b;
+            }
+        }
+        console.log(max(3,4));
+        // 利用函数求数组的最大值
+        function maxArr(arr){
+            var max = arr[0];
+            for(var i=1;i<arr.length;i++){
+                if (arr[i]>max){
+                    max=arr[i];
+                }
+            }
+            return max;
+        }
+        var arr = [2,6,1,77,52,25,7];
+        console.log(maxArr(arr));
+        //利用函数进行冒泡排序
+        function sort(arr){
+            for (var i=0;i<arr.length;i++){
+                for (var j=0;j<arr.length-i-1;j++){
+                    if (arr[j]>arr[j+1]){
+                        var temp;
+                        temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        var arr = [3,2,1,6,5,4];
+        sort(arr);
+        for (var i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

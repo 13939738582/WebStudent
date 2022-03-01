@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="04-模板引擎.js"></script>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script type="text/html" id="temp">
+        <div>姓名：{{name}}</div>
+        <div>年龄：{{ age }}</div>
+        <div>性别：{{ sex}}</div>
+        <div>住址：{{address }}</div>
+    </script>
+    <script>
+        // 定义数据
+        var data = {
+                name: '张三',
+                age: 18,
+                sex: '男',
+                address: '河南省信阳市'
+            }
+            // 调用自己的模板引擎
+        var str = template('temp', data);
+
+        // 渲染html页面
+        var div = document.querySelector('.box');
+        div.innerHTML = str;
+    </script>
+</body>
+
+</html>

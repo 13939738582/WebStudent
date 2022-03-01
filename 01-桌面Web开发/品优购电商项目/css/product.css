@@ -1,0 +1,167 @@
+/*字体图标*/
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?tomleg');
+    src:  url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+    url('../fonts/icomoon.woff?tomleg') format('woff'),
+    url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+.hd_left {
+    width: 415px;
+    height: 610px;
+    float: left;
+    padding-top: 20px;
+}
+.hd_right {
+    width: 785px;
+    height: 610px;
+    padding-left: 70px;
+    padding-top: 35px;
+    float: left;
+}
+.hd_left div:first-child {
+    font-size: 12px;
+}
+.hd_left div:first-child span:nth-child(-n+3)::after {
+    content: "";
+    font-family: 'icomoon';
+    margin: 0 12px;
+}
+.hd_left div:nth-child(2) {
+    width: 401px;
+    height: 401px;
+    text-align: center;
+    line-height: 401px;
+    border: 1px solid #ccc;
+}
+.hd_left div:nth-child(3) {
+    width: 401px;
+    height: 140px;
+    text-align: center;
+    line-height: 161px;
+    position: relative;
+}
+.hd_left div:nth-child(3) span::before {
+    content: "";
+    font-family: 'icomoon';
+    font-size: 50px;
+    font-family: 700;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.hd_left div:nth-child(3) span::after {
+    content: "";
+    font-family: 'icomoon';
+    font-size: 50px;
+    font-family: 700;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.hd_left div:last-child span{
+    margin: 0 12px;
+}
+.hd_left div:last-child span:last-child {
+    margin-left: 25px;
+}
+.hd_left div:last-child span:nth-child(2):before {
+    content: "";
+    font-family: 'icomoon';
+    color: #c81623;
+}
+.hd_right ul li:first-child {
+    font-size: 16px;
+}
+.hd_right ul li:nth-child(2) {
+    font-size: 12px;
+}
+.hd_right ul li:nth-child(3) {
+    font-size: 12px;
+    width: 720px;
+    height: 112px;
+    padding: 0 10px;
+    background-color: #fee9eb;
+}
+.hd_right ul li:nth-child(3) span:nth-of-type(2){
+    font-size: 24px;
+    padding-top: 5px;
+    color: #e12228;
+}
+.hd_right ul li:nth-child(3) span:first-of-type,.hd_right ul li:nth-child(3) span:nth-of-type(3) {
+    color: #e12228;
+}
+.hd_right ul li:nth-child(3) span:last-of-type {
+    float: right;
+    padding-top: 10px;
+}
+.hd_right ul li:nth-child(3) div {
+    font-size: 12px;
+}
+.hd_right ul li:nth-child(3) div{
+    float: left;
+}
+.hd_right ul li:nth-child(3) div::before {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    content: "促 销";
+    font-weight: 700;
+    float: left;
+}
+.hd_right ul li:nth-child(3) div em {
+    display: inline-block;
+    width: 38px;
+    height: 24px;
+    color: #fff;
+    line-height: 24px;
+    background-color: #c81623;
+}
+.hd_right ul li:nth-child(4) {
+    width: 550px;
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+.hd_right ul li:nth-child(4) div:first-child {
+    margin: 10px 0;
+}
+.hd_right ul li:nth-child(4) div h4{
+    display: inline-block;
+    float: left;
+    height: 20px;
+    margin-right: 10px;
+}
+.hd_right ul li:nth-child(5) {
+    margin-top: 15px;
+}
+.hd_right ul li:nth-child(n+5) h4 {
+    display: inline-block;
+    width: 52px;
+    height: 36px;
+    margin-right: 5px;
+}
+.hd_right ul li:nth-child(n+5) button {
+    width: 82px;
+    height: 36px;
+    background-color: #f7f7f7;
+    margin: 5px 5px;
+}
+.hd_right ul li:nth-child(n+5) button:hover {
+    background-color: #c81623;
+    color: #fff;
+}
+.hd_right ul li:nth-child(10) input{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+}
+.hd_right ul li:nth-child(10) button {
+    width: 140px;
+    height: 50px;
+    background-color:  #c81623;
+    color: #fff;
+}

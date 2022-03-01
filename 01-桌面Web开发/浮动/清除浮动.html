@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动</title>
+    <style>
+        /*:after伪元素法*/
+        /*.clearfix:after {*/
+        /*    content: "";*/
+        /*    display: block;*/
+        /*    height: 0;*/
+        /*    clear: both;*/
+        /*    visibility: hidden;*/
+        /*}*/
+        /*.clearfix {*/
+        /*    *zoom: 1;*/
+        /*}*/
+
+        /*双伪元素清除浮动*/
+        /*.clearfix:before,.clearfix:after {*/
+        /*    content: "";*/
+        /*    display: table;*/
+        /*}*/
+        /*.clearfix:after {*/
+        /*    clear: both;*/
+        /*}*/
+        /*.clearfix {*/
+        /*    *zoom: 1;*/
+        /*}*/
+
+        .f {
+            border: 2px solid black;
+            /*父级添加overflow*/
+            /*overflow: hidden;*/
+        }
+        .c {
+            float: left;
+            width: 200px;
+            height: 300px;
+            background-color: red;
+        }
+        .m {
+            float: left;
+            width: 200px;
+            height: 300px;
+            background-color: green;
+        }
+        .gf {
+            height: 100px;
+            background-color: orange;
+      }
+        /*额外标签法*/
+        /*.balabala {*/
+        /*    clear: both;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="f clearfix">
+    <div class="c">汤姆</div>
+    <div class="m">杰瑞</div>
+<!--    <div class="balabala"></div>-->
+</div>
+<div class="gf">葫芦娃救爷爷</div>
+</body>
+</html>

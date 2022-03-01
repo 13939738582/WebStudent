@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            display: block;
+            width: 200px;
+            height: 30px;
+            margin: 100px auto;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<input type="text">
+<script>
+    var inp = document.querySelector('input');
+    // 要用keyup
+    document.addEventListener("keydown", function (e){
+        // 这里注意要用大写的S或者直接用ASCII码值
+       if (String.fromCharCode(e.keyCode)=='S'){
+           inp.focus();
+       }
+    });
+</script>
+</body>
+</html>

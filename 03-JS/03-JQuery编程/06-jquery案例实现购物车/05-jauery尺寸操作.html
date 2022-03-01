@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            padding: 10px;
+            margin: 10px;
+            border: 10px solid green;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div></div>
+<script>
+    $(function (){
+        // 1.width()和height()方法获取元素的实际宽度高度,不包含内边距 外边距 边框
+        console.log($('div').width());
+        console.log($('div').height());
+        // 更改
+        // $('div').height(400);
+        // 2.innerWidth()和innerHeight()可以获取元素的实际宽高在加上内边距
+        console.log($('div').innerWidth());
+        console.log($('div').innerHeight());
+        // 更改
+        // $('div').innerWidth(300);
+        // 3.outerWidth()和outerHeight()可以获取元素的实际宽高 内边距 边框
+        console.log($('div').outerWidth());
+        console.log($('div').outerHeight());
+        // 更改
+        // $('div').outerHeight(300);
+        // 3.outerWidth(true)和outerHeight(true)可以获取元素的实际宽高 内边距 边框 外边距
+        console.log($('div').outerWidth(true));
+        console.log($('div').outerHeight(true));
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var str = 'red';
+        console.log(str);
+        str = 'blue';
+        console.log(str);
+        // 字符串的不可变并不是覆盖而是另外从新开辟空间,指针改变位置，之前所占有的空间并不会被释放
+        // 多次字符串的拼接会耗费大量的内存空间
+        for (var i=0;i<10;i++){
+            str +=i;
+        }
+        console.log(str);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

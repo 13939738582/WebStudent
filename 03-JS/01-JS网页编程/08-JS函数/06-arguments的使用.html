@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // arguments的使用(只有函数才具有arguments)
+        function getSum(){
+            var sum=0;
+            console.log(arguments);
+            // arguments是一种伪数组
+            // 具有数组的长度
+            console.log(arguments.length);
+            // 可以按照索引读取元素
+            console.log(arguments[1]);
+            for (var i=0;i<arguments.length;i++){
+                sum+=arguments[i];
+            }
+            return sum;
+        }
+        console.log(getSum(1,2,3));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

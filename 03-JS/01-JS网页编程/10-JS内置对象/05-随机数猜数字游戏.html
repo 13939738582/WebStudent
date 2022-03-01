@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var a = Math.floor(Math.random()*10+1);
+        while(true){
+            var b = parseInt(prompt('请输入你猜的数字'));
+            if (a==b){
+                alert("恭喜您猜对了！！！");
+                break;
+            }else if (a<b) {
+                alert('很遗憾，数字猜大了，再试一次。');
+            }else {
+                alert('很遗憾，数字猜小了，再试一次。');
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

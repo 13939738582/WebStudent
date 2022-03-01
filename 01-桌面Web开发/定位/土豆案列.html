@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>土豆案例</title>
+    <style>
+        .box {
+            position: relative;
+            width: 448px;
+            height: 252px;
+            margin: 100px auto;
+        }
+        .div1 {
+            width: 448px;
+            height: 252px;
+            background-color: rgba(0,0,0,.4);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+        .div1 img {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            margin-left: -17px;
+            margin-top: -17px;
+        }
+        .box:hover  .div1{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="../img/tudou.jpg" alt="">
+    <div class="div1">
+        <img src="../img/arr.png" alt="">
+    </div>
+</div>
+
+</body>
+</html>

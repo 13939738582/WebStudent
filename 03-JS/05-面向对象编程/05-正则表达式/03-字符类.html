@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 字符类:[]表示有一系列的字符可供选择，只要匹配其中一个就可以(也就是或的意思)
+        var rg = /[abc]/;
+        console.log(rg.test('asdf'));
+        console.log(rg.test('sdf'));
+
+        var rg1 = /^[abc]$/;//开头和结尾只能是a,b,c中的一个
+        console.log(rg1.test('abc'));
+        console.log(rg1.test('a'));
+
+        // 范围符
+        var rg2 = /[a-z]/;
+        console.log(rg2.test('a'));
+        console.log(rg2.test('A'));
+
+        // 字符组合
+        var rg3 = /^[a-zA-Z0-9_-]$/;//大小写字母数字下划线减号多选一
+        console.log(rg3.test('_'));
+
+        // 中括号里面有^代表取反要注意和范围符^进行区分
+        var rg3 = /^[^a-zA-Z0-9_-]$/;//代表不能包含大小写字母数字下划线减号
+        console.log(rg3.test('!'));
+
+
+        console.log('---------------');
+        // 用户名验证
+        var rg4 = /^[a-zA-Z0-9_-]$/;
+        var str = 'asd123_-';
+        var flag = true;
+        for (var i=0;i<str.length;i++){
+            var temp = str.charAt(i);
+            flag = flag&&rg4.test(temp);
+            if (!flag){
+                break;
+            }
+        }
+        console.log(flag);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

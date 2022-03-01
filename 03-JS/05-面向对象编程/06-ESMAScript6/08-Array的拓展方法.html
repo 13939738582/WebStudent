@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // Array.from()方法将类数组转换为真正的数组
+        let arrlike = {
+            '0':'a',
+            '1':'b',
+            '2':'c',
+            length:3
+        }
+        let arr = Array.from(arrlike);
+        console.log(arrlike);
+        console.log(arr);
+
+        // Array.from()的第二个参数
+        let arrlike1 = {
+            '0':'1',
+            '1':'2',
+            '2':'3',
+            length:3
+        }
+        let arr1 = Array.from(arrlike1,item=>item*2);
+        console.log(arrlike1);
+        console.log(arr1);
+
+
+        // find方法用于查找符合条件的第一个数组成员
+        let arr2 = [
+            {
+                id:1,
+                name:'张三'
+            },
+            {
+                id:2,
+                name:'李四'
+            }
+        ];
+        let target = arr2.find((value => value.id==2));
+        // let target = arr2.find(function (value){
+        //     return value.id==2;
+        // });
+        console.log(target);
+
+        // findIndex方法用于查找符合条件的第一个数组成员的索引
+        let arr3 = [1,2,3,11,13];
+        let target1 = arr3.findIndex((value => value>10));
+        console.log(target1);
+
+
+        // includes方法查找数组中是否包含某个元素
+        let arr4 = [1,2,3];
+        console.log(arr4.includes(1));
+        console.log(arr4.includes(4));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

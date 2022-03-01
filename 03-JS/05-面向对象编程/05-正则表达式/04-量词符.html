@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 量词符* 重复0次或多次
+        var rg = /^[a-z]*$/;
+        console.log(rg.test('asd'));
+        console.log(rg.test(''));
+
+        console.log('------------------------');
+        // 量词符+ 重复1次或多次
+        var rg1 = /^[a-z]+$/;
+        console.log(rg1.test(''));
+        console.log(rg1.test('asd'));
+
+        console.log('------------------------');
+        // 量词符? 重复1次或0次
+        var rg2 = /^[a-z]?$/;
+        console.log(rg2.test(''));
+        console.log(rg2.test('asd'));
+
+        console.log('------------------------');
+        // 量词符{n} 重复n次
+        var rg3 = /^[a-z]{3}$/;
+        console.log(rg3.test(''));
+        console.log(rg3.test('asd'));
+
+        console.log('------------------------');
+        // 量词符{n,} 重复大于等于n次
+        var rg4 = /^[a-z]{4,}$/;
+        console.log(rg4.test(''));
+        console.log(rg4.test('asdf'));
+
+        console.log('------------------------');
+        // 量词符{n,m} 重复大于等于n次且小于等于m次
+        var rg5 = /^[a-z]{4,8}$/;
+        console.log(rg5.test(''));
+        console.log(rg5.test('asdf'));
+
+        console.log('------------------------');
+        var rg6 = /^[A-Z]{1}[A-Za-z0-9]{4,8}$/;
+        console.log(rg6.test('Acvf123'));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

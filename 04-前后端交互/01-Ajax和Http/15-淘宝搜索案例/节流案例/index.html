@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jquery.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        img {
+            position: absolute;
+        }
+    </style>
+    <script>
+        // 不是使用节流实现图片跟随效果
+        // $(function() {
+        //     $(document).on('mousemove', function(e) {
+        //         $('img').css('left', e.pageX - 40 + 'px').css('top', e.pageY - 40 + 'px');
+        //     });
+        // });
+        // 使用节流阀
+        var timer = null;
+        $(function() {
+            $(document).on('mousemove', function(e) {
+                if (timer) {
+                    return;
+                } else {
+                    timer = setTimeout(function() {
+                        $('img').css('left', e.pageX - 40 + 'px').css('top', e.pageY - 40 + 'px');
+                        timer = null;
+                    }, 50);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <img src="img/angel.gif" alt="">
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      function Star(uname,age){
+          this.uname = uname;
+          this.age = age;
+      }
+      Star.prototype = {
+          constructor : Star,
+          sing: function (){
+              console.log(this.uname+'会唱歌');
+          },
+          // 如果声明的对象本身没有这个成员，则会向上查找，找到自己声明的构造函数的原型对象，看看里面有没有该成员
+          // sex: '女'
+      }
+      var ldh = new Star('刘德华',45);
+      // 如果声明的对象本身有这个成员，则直接输出
+      ldh.sex = '男';
+      console.log(ldh.sex);
+
+      // 如果声明的对象本身没有这个成员，且自己声明的构造函数的原型对象里面也没有，则会查找到Object.prototype里面
+      // Object.prototype.sex = '男女';
+      // Object.prototype里面也没有则返回undefined
+      // console.log(ldh.sex);
+      // 如果各个原型上都有这个属性，则就近原则
+    </script>
+</head>
+<body>
+
+</body>
+</html>

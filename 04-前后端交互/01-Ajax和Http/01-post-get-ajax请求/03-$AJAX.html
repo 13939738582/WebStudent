@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function (){
+            // 发起get请求
+            $.ajax({
+               type:'get',//请求方式 get 或post
+               url:'http://www.liulongbin.top:3006/api/getbooks/',//请求的url地址
+               data:{
+                   id:1
+               },//本次请求所携带的数据
+               success:function (res){
+                   console.log(res);
+               }//请求成功后的回调函数
+            });
+            // 发起post请求
+            $.ajax({
+                type:'post',
+                url:'http://www.liulongbin.top:3006/api/addbook/',
+                data:{
+                    bookname:'水浒传',
+                    author:'施耐庵',
+                    publisher:'上海图书出版社'
+                },
+                success:function (res){
+                    console.log(res);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

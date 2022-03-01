@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位的堆叠顺序</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 100px;
+        }
+        .div1 {
+            z-index: 1;
+            background-color: red;
+        }
+        .div2 {
+            z-index: 2;
+            background-color: green;
+        }
+        .div3 {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="div1 box">1</div>
+<div class="div2 box">2</div>
+<div class="div3 box">3</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var obj = {
+            id:1,
+            name:'tom',
+            msg:{
+                age:18
+            },
+            arr:[1,2,3,4]
+        };
+        var o = {};
+        for (var key in obj){
+            o[key] = obj[key];
+        };
+        // 浅拷贝拷贝复杂数据类型只是拷贝了地址，此时修改该数据会影响原来的数据（复杂数据）
+        o.id = 2;
+        o.msg.age = 19;
+        o.arr.push(5);
+        console.log(o);
+        console.log(obj);
+        // ES6新增的浅拷贝方法
+        var o1 = {};
+        Object.assign(o1,obj);
+        console.log(o1);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // trim方法去除字符串两边的空格
+        // 返回的是一个新的字符串
+        var str = '   hello world   ';
+        console.log(str);
+        console.log(str.trim());
+    </script>
+</head>
+<body>
+<input type="text">
+<button>提交</button>
+<script>
+    var btn = document.querySelector('button');
+    var inp = document.querySelector('input');
+    btn.addEventListener('click',function (){
+        // if (inp.value!='')
+        if (inp.value.trim()!=''){
+            alert('提交成功');
+        }else {
+            alert('提交失败');
+        }
+
+    })
+</script>
+</body>
+</html>

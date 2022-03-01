@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.addEventListener("load", function (){
+            // 1.普通函数中的this指向window
+            function fn(){
+                console.log('普通函数'+this);
+            }
+            fn();
+            // fn.call();
+
+
+            // 2.对象的方法中的this指向该对象
+            var obj = {
+                sing:function (){
+                    console.log('对象函数'+this);
+                }
+            }
+            obj.sing();
+
+            // 3.构造函数中的this指向实例对象
+            function Stat(){
+                console.log('我是构造函数'+this);
+            };
+            var fn1 = new Stat();
+            fn1;
+
+            // 4.绑定事件函数中的this指向函数调用者
+            var btn = document.querySelector('button');
+            btn.onclick = function (){
+                alert('绑定事件函数'+this);
+            };
+
+
+            // 5.定时器函数中的this指向window
+            setInterval(function (){
+                console.log('定时器函数'+this);
+            },1000);
+
+            // 6.立即执行函数中的this指向window
+            (function (){
+                console.log('立即执行函数'+this);
+            })();
+        })
+    </script>
+</head>
+<body>
+<button>按钮</button>
+</body>
+</html>

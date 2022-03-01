@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 30px;
+            font-size: 15px;
+            margin: 100px auto;
+            line-height: 30px;
+        }
+        .spa {
+            float: left;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<script>
+    // 获取提交的参数  去掉问好
+    var params = location.search.substr(1,location.search.length);
+    // console.log(params);
+    // 字符串分割  利用等号
+    var arr = params.split('=');
+    // console.log(arr)
+    var div = document.createElement('div');
+    document.body.appendChild(div);
+    div.className = 'box';
+    div.innerText = '欢迎您';
+    var sp = document.createElement('span');
+    div.appendChild(sp);
+    sp.className = 'spa';
+    sp.innerText = arr[1];
+</script>
+</body>
+</html>

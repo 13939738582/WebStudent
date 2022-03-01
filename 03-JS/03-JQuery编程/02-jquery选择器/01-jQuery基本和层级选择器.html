@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div>我是div</div>
+<div class="nav">我是nav div</div>
+<p>我是p</p>
+<ol>
+    <li>我是ol1</li>
+    <li>我是ol2</li>
+    <li>我是ol3</li>
+    <li>我是ol4</li>
+</ol>
+<ul>
+    <li>我是ul1</li>
+    <li>我是ul2</li>
+    <li>我是ul3</li>
+    <li>我是ul4</li>
+</ul>
+<script>
+    $(function (){
+        console.log($('.nav'));
+        console.log($('ul li'));
+        console.log($('ul li')[0]);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3新增的属性选择器</title>
+    <style>
+        /*1.必须是input，但是同时具有value属性*/
+
+        /*input[type] {*/
+        /*    color: green;*/
+        /*}*/
+        /*2.*/
+
+        /*input[type="password"] {*/
+        /*    color: red;*/
+        /*}*/
+
+        /*3.*/
+
+        /*div[class^="div"] {*/
+        /*    color: red;*/
+        /*}*/
+
+        /*4.*/
+
+        /*section[class$="name"] {*/
+        /*    color: red;*/
+        /*}*/
+
+        /*5.*/
+
+        section[class*="a"] {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<!--1.利用属性选择器可以不用借助类或id选择器-->
+
+<!--<input type="text" value="请输入用户名">-->
+<!--<input type="text">-->
+
+<!--2.属性选择器还可以选择属性=值的某些元素(重点!!!!!!!!!!!)-->
+
+<!--<input type="text">-->
+<!--<input type="password">-->
+
+<!--3.属性选择器可以选择属性值开头的某些元素-->
+
+<!--<div class="div1">1</div>-->
+<!--<div class="div2">2</div>-->
+<!--<div class="div3">3</div>-->
+<!--<div class="div4">4</div>-->
+<!--<div>5</div>-->
+
+<!--4.属性选择器可以选择属性值结尾的某些元素-->
+
+<!--<section class="LOL1-name">马尔扎哈</section>-->
+<!--<section class="LOL2-name">泰达米尔</section>-->
+<!--<section class="LOL3">亡灵勇士</section>-->
+
+<!--5.属性选择器可以选择包含属性值的某些元素-->
+
+<section class="LOL1-name">马尔扎哈</section>
+<section class="LOL2-name">泰达米尔</section>
+<section class="LOL3">亡灵勇士</section>
+<section class="LL-name">放逐之刃</section>
+
+</body>
+</html>

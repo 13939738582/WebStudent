@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 原型对象的应用，拓展内置对象方法
+        // 例如：给数组添加求和功能
+        Array.prototype.sum = function (){
+            var count = 0;
+            for (var i =0;i<this.length;i++){
+                count += this[i];
+            }
+            return count;
+        }
+
+        // 不要采用下面这个方式添加函数，因为会将Array原型对象中的方法覆盖掉
+        // Array.prototype = {
+        //     sum: function (){
+        //         var count = 0;
+        //         for (var i =0;i<this.length;i++){
+        //             count += this[i];
+        //         }
+        //         return count;
+        //     }
+        // }
+        var arr = [1,2,3,4];
+        console.log(arr.sum());
+        var arr1 = new Array(1,2,3,4,5,6);
+        console.log(arr1.sum());
+        console.log(Array.prototype);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

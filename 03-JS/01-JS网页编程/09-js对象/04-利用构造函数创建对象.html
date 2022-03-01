@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //利用构造函数创建对象
+        // 我们利用上面两种方法只能一次创建一个对象，如果当对象的方法和属性大量相同的时候很不方便，会导致代码冗余
+        // 此时我们可以利用函数的方法，重复这些相同的代码，那么我们把这种函数称为构造函数
+        // 这种函数里面封装的不是普通的代码，而是对象
+
+        // 构造函数的结构
+        // function 构造函数名(){
+        //     this.属性 = 值;
+        //     this.方法 = function (){
+        //
+        //     }
+        // }
+
+        // 1.构造函数的名字首字母大写
+        //2.构造函数不需要return，就可以返回结果
+        //3.调用构造函数必须使用new
+        //4.属性和方法前面必须添加this
+        function Star(uname, age, sex){
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (sang){
+                console.log(sang);
+            }
+        }
+        var ldh = new Star('刘德华',50,'男');//调用函数返回的是一个对象
+        // console.log(typeof ldh);
+        console.log(ldh.name);
+        console.log(ldh.age);
+        console.log(ldh.sex);
+        ldh.sing('冰雨');
+
+        var fbb = new Star('范冰冰',42,'女');
+        console.log(fbb.name);
+        console.log(fbb.age);
+        console.log(fbb.sex);
+        fbb.sing('我也不知道');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

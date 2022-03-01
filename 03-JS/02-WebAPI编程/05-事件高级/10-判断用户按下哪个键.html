@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // keyup 和 keydown 不区分大小写
+    // document.addEventListener("keyup", function (e){
+    //     // console.log(e);
+    //     console.log(e.key);//有兼容性问题
+    //     console.log(e.keyCode);//获取ASCII码值
+    // });
+    // keypress区分大小写
+    // document.addEventListener("keypress", function (e){
+    //     // console.log(e);
+    //     console.log(e.key);//有兼容性问题
+    //     console.log(e.keyCode);//获取ASCII码值
+    // });
+
+    // 获取用户的按键并弹出
+    document.addEventListener("keydown", function (e){
+        // console.log(e);
+        alert(String.fromCharCode(e.keyCode));//将ASCII码值转换为对应的字符
+    });
+</script>
+</body>
+</html>

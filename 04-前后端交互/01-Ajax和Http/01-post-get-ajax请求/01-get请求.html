@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function (){
+            var btns =  document.querySelectorAll('button');
+            btns[0].addEventListener('click',function (){
+                $.get('http://www.liulongbin.top:3006/api/getbooks/',function (res){
+                    console.log(res);
+                });
+            });
+            btns[1].addEventListener('click',function (){
+                $.get('http://www.liulongbin.top:3006/api/getbooks/',{id:1},function (res){
+                    console.log(res);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<button>点击获取不带参数的请求</button>
+<button>点击获取带参数的请求</button>
+</body>
+</html>

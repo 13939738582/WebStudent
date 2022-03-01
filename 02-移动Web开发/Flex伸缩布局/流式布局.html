@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*对比*/
+        .box {
+            width: 980px;
+            height: 400px;
+            background-color: skyblue;
+        }
+        /*流式布局*/
+        section {
+            width: 100%;
+            max-width: 980px;
+            min-width: 320px;
+        }
+        section div {
+            width: 50%;
+            height: 400px;
+            float: left;
+        }
+        section div:first-child {
+            background-color: red;
+        }
+        section div:last-child {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<section>
+    <div></div>
+    <div></div>
+</section>
+</body>
+</html>

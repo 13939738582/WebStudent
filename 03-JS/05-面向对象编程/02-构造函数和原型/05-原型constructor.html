@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Star(uname , age) {
+            this.uname = uname;
+            this.age = age;
+        }
+        Star.prototype.sing = function (){
+            console.log(this.uname+'会唱歌');
+        }
+
+        // 很多时候，我们需要手动的利用constructor这个属性来指回我们的构造函数
+        // 比如说：当我们的方法比较多的时候：我们可以采用对象的方式来添加方法
+        // Star.prototype = {
+        //     // 此时我们需要手动的添加constroctor属性
+        //     // constructor : Star,
+        //     sing:function (){
+        //         console.log(this.uname+'会唱歌');
+        //     },
+        //     movie:function (){
+        //         console.log(this.uname+'会拍电影');
+        //     }
+        // }
+        // 但是此时，我们的constructor这个属性却并不能指回我们的构造函数，因为采用了赋值的方式为prototype添加属性，而非上面的
+        // 追加方式，所以把prototype对象里面的constroctor属性给覆盖掉了
+        var ldh = new Star('刘德华',45);
+        // 对象原型和构造函数原型对象中都有一个constructor属性，该属性指回了构造函数
+        console.log(Star.prototype.constructor);
+        console.log(ldh.__proto__.constructor);
+
+        // Star 原型对象里面的__proto__原型指向的是Object.prototype
+        console.log(Star.prototype.__proto__ === Object.prototype);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

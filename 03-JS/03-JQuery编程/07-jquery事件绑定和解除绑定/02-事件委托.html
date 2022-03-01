@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<ul>
+  <li>我是li1</li>
+  <li>我是li2</li>
+  <li>我是li3</li>
+  <li>我是li4</li>
+  <li>我是li5</li>
+</ul>
+<ol>
+</ol>
+<script>
+    $(function (){
+        // 利用on实现事件的委托  给每一个li绑定事件
+        // 原来的写法
+        // 这样写，相当于给每个li都绑定了事件
+        // $('ul li').click(function (){
+        //
+        // });
+        // 现在
+        // 仅仅只是给ul一个元素绑定了事件但是触发对象是li
+        $('ul').on('click','li',function (){
+            $(this).css('color','red');
+        });
+
+        // on()的优势之一:可以给动态创建的元素绑定事件(仅限于事件委派  因为最终执行事件的元素是父元素，而非新创建的子元素)
+
+        // 原先的绑定事件方式(只能放在新建元素的下面)
+        // $('ol li').click(function (){
+        //     $(this).css('color','green');
+        // })
+        // 可以在任何位置
+        $('ol').on('click','li',function (){
+            // 注意：这里面的this是指li 而非ol
+            $(this).css('color','green');
+        });
+        for (var i=0;i<3;i++){
+            var li = $('<li>我是动态创建的li</li>')
+            $('ol').append(li);
+        }
+
+
+
+    });
+</script>
+</body>
+</html>

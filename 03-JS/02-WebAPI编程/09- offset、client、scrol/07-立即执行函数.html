@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 立即执行函数  不需要调用  可以立刻执行的函数  并且创建了一个独立的作用域
+    // 写法
+    // (function (形参){})(实参)   或者 (function (){}())
+    (function (a){
+        console.log(1111+a);
+    })(2222);
+
+
+    (function (b){
+        console.log(3+b);
+    }(5));
+</script>
+</body>
+</html>

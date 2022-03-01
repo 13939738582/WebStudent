@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span {
+            color: #aaa;
+            font-size: 14px;
+        }
+        .right {
+            color: green;
+        }
+        .wrong {
+            color: red;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", fn);
+        function fn(){
+            var inp = document.querySelector('.username');
+            var sp = document.querySelector('span');
+            var rg = /^[A-Za-z0-9_-]{6,16}$/;
+            inp.onblur = function (){
+                if (rg.test(this.value)){
+                    sp.className = 'right';
+                    sp.innerText = '格式正确';
+                }else {
+                    sp.className = 'wrong';
+                    sp.innerText = '用户名格式不正确';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" class="username"> <span>请输入用户名</span>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<script>
+    $(function (){
+        $('button').click(function (){
+            // 给自己添加背景颜色
+            $(this).css('background','red');
+            // 去掉自己兄弟的颜色
+            $(this).siblings('button').css('background','');
+        });
+    })
+</script>
+</body>
+</html>

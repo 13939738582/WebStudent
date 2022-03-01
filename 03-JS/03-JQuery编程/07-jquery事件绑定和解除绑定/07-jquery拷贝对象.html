@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function (){
+           //  // 拷贝的对象里面为空
+           // var targetObj = {};
+           // var obj = {
+           //     id:1,
+           //     name:'tom'
+           // }
+           // // 对象的拷贝
+           // $.extend(targetObj,obj);
+           //  console.log(targetObj);
+
+            // // 拷贝的对象里面不为空
+            // var targetObj = {
+            //     id:2,
+            //     name:'tuoni',
+            //     sex:22
+            // };
+            // var obj = {
+            //     id:1,
+            //     name:'tom'
+            // }
+            // // 对象的拷贝
+            // $.extend(targetObj,obj);
+            // // 具有相同属性的会被覆盖掉，没有的会保留
+            // console.log(targetObj);
+
+            // 拷贝的对象里面也有对象
+            var targetObj = {
+                id:2
+            };
+            var obj = {
+                id:1,
+                name:'tom',
+                obj1:{
+                    age:18
+                }
+            }
+            // 对象的拷贝
+            // $.extend(targetObj,obj);
+            // console.log(targetObj);
+
+            // // 浅拷贝  简单数据类型直接拷贝  复杂数据类型拷贝的是地址  修改拷贝后的值 会对两个对象都有影响
+            // $.extend(targetObj,obj);
+            // targetObj.obj1.age = 20;
+            // console.log(targetObj);
+            // console.log(obj);
+
+            // 深拷贝  简单数据类型直接拷贝  复杂数据类型也直接拷贝  修改拷贝后的值 会对修改的对象有影响
+            $.extend(true, targetObj,obj);
+            targetObj.obj1.age = 20;
+            console.log(targetObj);
+            console.log(obj);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

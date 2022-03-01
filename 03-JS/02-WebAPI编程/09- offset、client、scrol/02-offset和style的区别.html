@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="box" style="width: 200px"></div>
+<script>
+    var box = document.querySelector('.box');
+    // 只读属性
+    console.log(box.offsetWidth);
+    // style只能获取行内样式表中的样式  不包含padding等值  可读写属性
+    console.log(box.style.width);
+</script>
+</body>
+</html>

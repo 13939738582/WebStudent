@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条</title>
+    <style>
+        .father {
+            width: 150px;
+            height: 15px;
+            border: 1px solid red;
+            border-radius: 7px;
+            padding: 1px;
+            margin: 100px auto;
+        }
+        .son {
+            width: 50%;
+            height: 100%;
+            border-radius: 7px;
+            background-color: red;
+            transition: all .5s linear;
+        }
+        .father:hover .son{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

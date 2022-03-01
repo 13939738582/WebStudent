@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+<!--    传统方式-->
+    <script>
+        $(function (){
+            var data = {
+                title:'<h3>用户信息</h3>',
+                name:'张三',
+                age:20,
+                isVip:true,
+                regTime:new Date(),
+                hobby:['吃饭','睡觉','打豆豆']
+            }
+            $('.title').html(data.title);
+            $('.name').html(data.name);
+            $('.age').html(data.age);
+            $('.isVip').html(data.isVip);
+            // 格式化日期
+            var year = data.regTime.getFullYear();
+            var mon = data.regTime.getMonth()+1;
+            var dates = data.regTime.getDate();
+            var time = year+'年'+mon+'月'+dates+'日';
+            $('.regTime').html(time);
+            $.each(data.hobby,function (index,value){
+                $('.hobby').append('<li>'+value+'</li>');
+            })
+        });
+    </script>
+</head>
+<body>
+<div class="title"></div>
+<div>姓名：<span class="name"></span></div>
+<div>年龄：<span class="age"></span></div>
+<div>会员：<span class="isVip"></span></div>
+<div>注册时间：<span class="regTime"></span></div>
+<div>爱好：
+    <ul class="hobby">
+    </ul>
+</div>
+</body>
+</html>

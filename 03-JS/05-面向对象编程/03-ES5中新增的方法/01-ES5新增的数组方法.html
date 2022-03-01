@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // // 遍历方法forEach()
+        // var arr = [1,2,3,4];
+        // var sum = 0;
+        // arr.forEach(function (value,index,array){
+        //     console.log('数组元素'+value+'元素对应的索引'+index+'数组'+array);
+        //     sum+=value;
+        // })
+        // console.log(sum);
+
+        // // map() 方法返回一个由原数组中的每个元素调用一个指定方法后的返回值组成的新数组。
+        // var arr = [1,2,3,4];
+        // var newArr = arr.map(function (value){
+        //    if (value%2!=0){
+        //        return value+1;
+        //    } else {
+        //        return value;
+        //    }
+        // });
+        // console.log(newArr);
+
+        // // 筛选数组 filter()
+        // var arr = [9,56,23,6,33];
+        // var newarr = arr.filter(function (value , index){
+        //     return value>10;
+        // });
+        // console.log(newarr);
+
+        // // some 查找数组中是否有满足条件的元素
+        // var arr = [32,565,12,7];
+        // var boolen = arr.some(function (value, index){
+        //     return value>100;
+        // });
+        // console.log(boolen);
+
+        // every() 方法测试数组的所有元素是否都通过了指定函数的测试。
+        // 相对于some来说every是只有全部都过才能为真
+        var arr = [32,565,12,7];
+        var boolen = arr.every(function (value){
+            return value > 4;
+        });
+        console.log(boolen)
+    </script>
+</head>
+<body>
+</body>
+</html>

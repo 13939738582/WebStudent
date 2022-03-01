@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 递归函数 ：函数内部自己调用自己称为递归
+        var num =1;
+        function fn(){
+            console.log('Hello World');
+            if (num==6){
+                return;
+            }
+            num++;
+            fn();
+        }
+        fn();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // Math.random返回一个随机的小数
+        for (var i=0;i<10;i++){
+            console.log(Math.random());
+        }
+
+        //Math.random随机返回指定范围的随机数   Math.random() * (max - min) + min
+        for (var i=0;i<10;i++){
+            console.log(Math.random()*(60-50)+50);
+        }
+
+        //Math.random随机返回指定范围的整数随机数   Math.floor(Math.random() * (max - min)) + min
+        for (var i=0;i<10;i++){
+            console.log(Math.floor(Math.random()*(60-50)+50));
+        }
+
+        //Math.random随机返回指定范围的整数随机数（包括两个数）Math.floor(Math.random() * (max - min + 1)) + min
+        for (var i=0;i<10;i++){
+            console.log(Math.floor(Math.random()*(60-50+1)+50));
+        }
+
+        //封装成函数
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 利用concat('字符串1','字符串2')完成字符串的拼接 和+号有区别，concat调用后，str的指针还是指向原始位置而非拼接后的位置
+        // 想要直接指向需要使用 str = str.concat('字符串1','字符串2')
+        var str = 'Hello';
+        console.log(str.concat(' World!','  你好，世界'));
+
+        // 截取字符串
+        // substr('截取的起始位置','截取的字符个数')
+        console.log(str.concat(' World!','  你好，世界').substr(3,5));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

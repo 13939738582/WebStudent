@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 格式化日期 年月日
+        var date = new Date();
+        console.log(date.getFullYear());
+        console.log(date.getMonth()+1);
+        console.log(date.getDate());
+        console.log(date.getDay());
+        console.log(date.getFullYear()+'年'+date.getMonth()+1+'月'+date.getDate()+'日  周'+date.getDay());
+        var year = date.getFullYear();
+        var mon = date.getMonth()+1;
+        var dates = date.getDate();
+        var day = date.getDay();
+        var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+        console.log(year+'年'+mon+'月'+dates+'日'+arr[day]);
+
+        // 格式化日期 时分秒
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        console.log(hours+'时'+minutes+'分'+seconds+'秒');
+
+        // 整体的
+        console.log(year+'年'+mon+'月'+dates+'日'+hours+'时'+minutes+'分'+seconds+'秒'+arr[day]);
+
+        // 通过封装函数实现获取并格式化时间
+        function getTimer(){
+            var date = new Date();
+            var year = date.getFullYear();
+            var mon = date.getMonth()+1;
+            mon = mon<10?'0'+mon:mon;
+            var dates = date.getDate();
+            dates = dates<10?'0'+dates:dates;
+            var day = date.getDay();
+            var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+            var hours = date.getHours();
+            hours = hours<10?'0'+hours:hours;
+            var minutes = date.getMinutes();
+            minutes = minutes<10?'0'+minutes:minutes;
+            var seconds = date.getSeconds();
+            seconds = seconds<10?'0'+seconds:seconds;
+            return year+'年'+mon+'月'+dates+'日'+hours+'时'+minutes+'分'+seconds+'秒'+arr[day];
+        }
+
+        console.log(getTimer());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

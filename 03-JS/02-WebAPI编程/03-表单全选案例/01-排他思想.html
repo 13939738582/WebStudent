@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .btns {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+<script>
+    var  btn =document.getElementsByTagName('button');
+    for (var i=0;i<btn.length;i++){
+        btn[i].onclick = function () {
+            for (var j=0;j<btn.length;j++){
+                btn[j].className = '';
+            }
+            this.className = 'btns';
+        }
+    }
+</script>
+</body>
+</html>

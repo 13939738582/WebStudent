@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // // 字符串替换方法replace(注意替换完返回的是新的字符串)
+        // var str = 'Hello World';
+        // var str1 = str.replace('Hello','Hi');
+        // console.log(str1);
+        //
+        // var str2 = str.replace(/Hello/,'Hi');
+        // console.log(str2);
+    </script>
+</head>
+<body>
+<textarea name="" id="message" cols="30" rows="10"></textarea>
+<button>提交</button>
+<script>
+    var text = document.querySelector('#message');
+    var btn = document.querySelector('button');
+    btn.onclick = function (){
+        // /激情/ 后面跟g全局匹配  后面跟i忽略大小写  后面跟gi全局匹配忽略大小写
+        var str = text.value.replace(/激情|骂人/g,'**');
+        var div = document.createElement('div');
+        div.innerText = str;
+        document.body.appendChild(div);
+    }
+</script>
+</body>
+</html>

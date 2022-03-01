@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery.js"></script>
+</head>
+<body>
+<form action="" id="fr">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="submit" id="btn">
+</form>
+<script>
+    $(function (){
+       $("#fr").submit(function (e){
+           // alert(1111);
+           // 阻止表单默认行为
+           e.preventDefault();
+           // 通过serialize()方法获取表单中的所有数据
+           console.log($(this).serialize());
+       });
+
+        // $('#fr').on('submit',function (e){
+        //     alert(222);
+            // 阻止表单默认行为
+            e.preventDefault();
+            // 通过serialize()方法获取表单中的所有数据
+            console.log($(this).serialize());
+        // });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div>1</div>
+<script>
+    var div = document.querySelector('div');
+    // event就是一个事件对象，相当于形参，写到侦听函数的小括号里面
+    // 事件对象只有有了事件才存在，系统自动创建的不需要传递参数
+    // 事件对象是跟事件的一系列的相关数据集合
+    // div.onclick = function (event){
+    //     console.log(event);
+    // }
+    div.addEventListener("click", function (event){
+        console.log(event);
+    });
+</script>
+</body>
+</html>

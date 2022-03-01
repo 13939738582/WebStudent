@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 100px;
+            margin: 100px auto;
+        }
+        .box1 {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+        }
+        .box2 {
+            width: 100px;
+            display: none;
+        }
+        .box2 li {
+            width: 100px;
+            height: 50px;
+            list-style: none;
+            background-color: green;
+        }
+        .box2 li:hover{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<!--新浪下拉菜单-->
+<div class="box">
+    <div class="box1">第一级</div>
+    <div class="box2">
+        <ul>
+            <li>第二级1</li>
+            <li>第二级2</li>
+            <li>第二级3</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var box1 = document.querySelector('.box1');
+    var box2 = document.querySelector('.box2');
+    var flag = 0;
+    box1.onclick = function (){
+        if (flag==0){
+            box2.style.display = 'block';
+            flag=1;
+        }else {
+            box2.style.display = 'none';
+            flag=0;
+        }
+    }
+</script>
+</body>
+</html>

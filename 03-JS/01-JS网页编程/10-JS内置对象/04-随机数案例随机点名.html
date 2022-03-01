@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr = ['张一','张二','张三','张四','张五','张六','张七','张八','张九','张十']
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+        }
+
+        console.log(arr[getRandomIntInclusive(0,9)]);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

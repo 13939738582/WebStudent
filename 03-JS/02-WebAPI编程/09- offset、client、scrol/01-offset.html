@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            /*padding: 10px;*/
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<script>
+    // 获取元素的位置
+    var father = document.querySelector('.father');
+    console.log(father.offsetTop);
+    console.log(father.offsetLeft);
+
+    // 获取元素相对于父元素的位置(父元素需要定位)
+    var son = document.querySelector('.son');
+    console.log(son.offsetTop);
+    console.log(son.offsetLeft);
+
+    // 返回父元素 最近一级的带有定位的父元素(父元素需要定位，否则返回body)
+    console.log(son.offsetParent);
+
+    // 获取元素的宽度高度(padding  border撑大盒子也算，包含padding  border 但是不包含margin)
+    console.log(father.offsetWidth);
+    console.log(father.offsetHeight);
+</script>
+</body>
+</html>

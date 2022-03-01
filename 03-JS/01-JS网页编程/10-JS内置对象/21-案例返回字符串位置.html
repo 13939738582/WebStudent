@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      function getStr(str){
+          var i =0;
+          var sum = 0;
+          var arr = [];
+          while(true){
+              var temp = str.indexOf('o',i);
+              if (temp!=-1){
+                  arr[arr.length]=temp;
+                  i=temp+1;
+                  sum++;
+              }
+              else {
+                  arr[arr.length]=sum;
+                  break;
+              }
+          }
+          return arr;
+      }
+      var str = 'abcoefoxyozzopp';
+      console.log(getStr(str));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

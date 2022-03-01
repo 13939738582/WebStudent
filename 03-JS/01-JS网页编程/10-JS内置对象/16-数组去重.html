@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr = ['c','a','z','a','x','a','x','c','b'];
+        // 我们观察数组可知数组里面有 a b c z x五种
+        var arr1 = [];
+        arr1[arr1.length] = arr[arr.indexOf('a')];
+        arr1[arr1.length] = arr[arr.indexOf('b')];
+        arr1[arr1.length] = arr[arr.indexOf('c')];
+        arr1[arr1.length] = arr[arr.indexOf('z')];
+        arr1[arr1.length] = arr[arr.indexOf('x')];
+        console.log(arr1);
+
+
+        // 实际上我们不知道数组里面有什么元素
+        // function unique(arr) {
+        //     var arr1 = [];
+        //     for (var i=0;i<arr.length;i++){
+        //         if(arr1.indexOf(arr[i])==-1){
+        //             arr1[arr1.length]=arr[i];
+        //         }
+        //     }
+        //     return arr1;
+        // }
+        // console.log(unique(arr));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

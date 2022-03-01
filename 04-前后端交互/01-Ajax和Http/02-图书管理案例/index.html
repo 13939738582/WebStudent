@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="JS/jquery.js"></script>
+    <script>
+        $(function() {
+            //     获取图书列表数据
+            function getBookList() {
+                $.get('http://www.liulongbin.top:3006/api/getbooks', function(res) {
+
+                    if (res.status != 200) {
+                        return alert('获取数据失败');
+                    } else {
+                        let tb = document.querySelector('tbody');
+                        tb.innerHTML = '';
+                        $.each(res.data, function(index, value) {
+                            let tr = document.createElement('tr');
+                            for (var key in value) {
+                                let td = document.createElement('td');
+                                td.innerHTML = value[key];
+                                tr.appendChild(td);
+                            }
+                            if (true) {
+                                let td = document.createElement('td');
+                                td.innerHTML = '<a class="del" data-id="' + value.id + '">删除</a>';
+                                tr.appendChild(td);
+                            }
+                            tb.appendChild(tr);
+                        });
+                    }
+
+                });
+            }
+            getBookList();
+            // 事件委托
+            // 删除功能
+            $('tbody').on('click', '.del', function() {
+                let id = $(this).attr('data-id');
+                $.get('http://www.liulongbin.top:3006/api/delbook', {
+                    id: id
+                }, function(res) {
+                    if (res.status != 200) {
+                        return alert('删除失败');
+                    }
+                    getBookList();
+                });
+            });
+
+            // 添加功能
+            $('#btnAdd').click(function() {
+                let bookname = $('#inpBookname').val().trim();
+                let author = $('#inpAuthor').val().trim();
+                let publisher = $('#inppublisher').val().trim();
+                if (bookname.length <= 0 || author.length <= 0 || publisher.length <= 0) {
+                    return alert('请填写完整内容');
+                }
+                $.post('http://www.liulongbin.top:3006/api/addbook', {
+                    bookname: bookname,
+                    author: author,
+                    publisher: publisher
+                }, function(res) {
+                    if (res.status != 201) {
+                        return alert('添加失败');
+                    } else {
+                        getBookList();
+                        $('#inpBookname').val();
+                        $('#inpAuthor').val();
+                        $('#inppublisher').val();
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 添加图书panel面板 -->
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">添加新图书</h3>
+        </div>
+        <div class="panel-body form-inline">
+
+            <div class="input-group">
+                <div class="input-group-addon">书名</div>
+                <input type="text" class="form-control" id="inpBookname" placeholder="请输入书名">
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-addon">作者</div>
+                <input type="text" class="form-control" id="inpAuthor" placeholder="请输入作者名">
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-addon">出版社</div>
+                <input type="text" class="form-control" id="inppublisher" placeholder="请输入出版社">
+            </div>
+
+            <button id="btnAdd" class="btn btn-primary">添加</button>
+
+        </div>
+    </div>
+    <!-- 图书表格 -->
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>出版社</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

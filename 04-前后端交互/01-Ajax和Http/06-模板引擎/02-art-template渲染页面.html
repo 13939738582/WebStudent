@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script src="template-web.js"></script>
+    <!--    这里需要注意将script标签里面的type属性指定为text/html  因为模板引擎里面有html标签-->
+    <script type="text/html" id="temp">
+        <!--使用art-template模板引擎渲染页面-->
+        <div class="title">{{@title}}</div>
+        <div>姓名：<span class="name">{{name}}</span></div>
+        <div>年龄：<span class="age">{{age}}</span></div>
+        <div>会员：<span class="isVip">{{isVip}}</span></div>
+        <!--        调用过滤器-->
+        <div>注册时间：<span class="regTime">{{regTime|fn}}</span></div>
+        <div>爱好：
+            <ul class="hobby">
+                <!--        循环输出  {{$value}}值   {{$index}}索引 -->
+                {{each hobby}}
+                <li>{{$value}}{{$index}}</li>{{/each}}
+            </ul>
+        </div>
+        <!--        条件输出-->
+        <div>{{if value
+            <10}}小于10{{else if value<20}}小于20{{else}}大于20{{/if}}</div>
+    </script>
+
+    <script>
+        // 定义要渲染的数据
+        $(function() {
+            var data = {
+                    title: '<h4>用户信息</h4>',
+                    name: '张三',
+                    age: 20,
+                    isVip: true,
+                    regTime: new Date(),
+                    hobby: ['吃饭', '睡觉', '打豆豆'],
+                    value: 4
+                }
+                // 定义template过滤器(实质就是定义一个函数来处理数据)
+            template.defaults.imports.fn = function(date) {
+                    var year = date.getFullYear();
+                    var mon = date.getMonth() + 1;
+                    var dates = date.getDate();
+                    return year + '年' + mon + '月' + dates + '日';
+                }
+                // 调用 template 函数
+            var str = template('temp', data);
+            // console.log(str);
+            $('body').html(str);
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

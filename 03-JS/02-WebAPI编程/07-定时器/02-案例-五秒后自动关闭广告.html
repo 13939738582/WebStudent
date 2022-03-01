@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        span {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.addEventListener('load',function (){
+            var div = document.querySelector('div');
+            var sp = document.querySelector('span');
+            sp.onclick = function (){
+                div.style.display = 'none';
+            }
+            function fn(){
+                div.style.display = 'none';
+            }
+            setTimeout(fn,5000);
+        });
+    </script>
+</head>
+<body>
+<div>
+    <span>×</span>
+</div>
+</body>
+</html>

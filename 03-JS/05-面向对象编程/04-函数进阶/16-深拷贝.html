@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var obj = {
+            id:1,
+            name:'tom',
+            msg:{
+                age:18
+            },
+            arr:[1,2,3,4]
+        };
+        var o = {};
+        function deepCopy(o,obj){
+            for (var key in obj){
+                var item = obj[key];
+                // 这里注意数组必须放在Object前面，因为数组也属于对象
+                if (item instanceof Array){
+                    o[key] = [];
+                    deepCopy(o[key],item);
+                }else if (item instanceof Object){
+                    o[key] = {};
+                    deepCopy(o[key],item);
+                }else{
+                    o[key] = item;
+                }
+            }
+        };
+        // 深拷贝复杂数据类型拷贝的是完成的数据，新开辟了一个空间，修改拷贝后的数据不会影响原先的数据
+        deepCopy(o,obj);
+        o.msg.age = 20;
+        o.arr.push(5);
+        console.log(o);
+        console.log(obj);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

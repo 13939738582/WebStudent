@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?vttu8k');
+    src:  url('fonts/icomoon.eot?vttu8k#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?vttu8k') format('truetype'),
+    url('fonts/icomoon.woff?vttu8k') format('woff'),
+    url('fonts/icomoon.svg?vttu8k#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+.headbox {
+    height: 105px;
+}
+.headbox1 {
+    width: 1202px;
+    margin: auto;
+}
+.logo {
+    float: left;
+    width: 229px;
+    height: 105px;
+    margin-top: 30px;
+}
+.boxdh {
+    float: left;
+    width: 377px;
+    height: 105px;
+}
+.boxdh a {
+    display: block;
+    float: left;
+    margin: 40px 20px;
+    text-decoration: none;
+    color: black;
+}
+.headinput {
+    float: left;
+    position: relative;
+    width: 413px;
+    height: 105px;
+}
+.headinput input {
+    width: 302px;
+    height: 38px;
+    border: 2px solid #00a4ff;
+    position: absolute;
+    top: 25px;
+    left: -51px;
+}
+.headinput button {
+    width: 50px;
+    height: 44px;
+    border: 2px solid #00a4ff;
+    font-family: 'icomoon';
+    background-color: #00a4ff;
+    color: white;
+    position: absolute;
+    top: 25px;
+    left: 259px;
+}
+.boxtuoyuan {
+    float: left;
+    width: 182px;
+    height: 105px;
+    position: relative;
+}
+.boxtuoyuan img {
+    position: absolute;
+    top: 33px;
+    left: -19px;
+}
+.boxtuoyuan span {
+    position: absolute;
+    top: 34px;
+    left: 20px;
+}
+.box2 {
+    width: 100%;
+    height: 420px;
+    background-color: #1c036c;
+}
+.box2child {
+    width: 1202px;
+    height: 420px;
+    margin: 0 auto;
+    background-image: url("banner2.png");
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝轮播图结构</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .tb-promo {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+        }
+        .prev {
+            width: 20px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            left: 0;
+            background-color: rgba(0,0,0,.4);
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+        }
+        .next {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            right: 0;
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0,0,0,.4);
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+        .promo-nav {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -35px;
+            width: 70px;
+            height: 13px;
+            border-radius: 7px;
+            background-color: rgba(255,255,255,.3);
+        }
+        .promo-nav li {
+            width: 8px;
+            height: 8px;
+            list-style: none;
+            background-color: white;
+            border-radius: 50%;
+            float: left;
+            margin: 3px;
+        }
+        .promo-nav li:hover {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+<body>
+<div class="tb-promo">
+    <img src="../img/tb.jpg" alt="">
+    <div class="prev"><</div>
+    <div class="next">></div>
+    <ul class="promo-nav">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>

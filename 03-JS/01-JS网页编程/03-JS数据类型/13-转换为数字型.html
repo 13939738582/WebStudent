@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var age = prompt('请输入你的年龄');
+        console.log(typeof age);
+        // parseInt(变量)把字符型转换为数字型，得到的是整数
+        console.log(parseInt(age));
+        console.log(typeof parseInt(age));
+        // 数字开头，可以去掉后面的字母
+        console.log(parseInt('120px'));
+        // 下面的不行
+        console.log(parseInt('rem120px'));
+        // parseFloat(变量)得到浮点型
+        console.log(parseFloat(age));
+        // 其他的和上面相同
+        // Number()强制转换
+        var str = '123';
+        console.log(Number(str));
+        console.log(typeof  Number(str));
+        // 利用算数运算 - * / 实现隐式转换(不能用+,+号是连接符)
+        console.log('12'-0);
+        console.log(typeof ('12'-0));
+        console.log('12'-8);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

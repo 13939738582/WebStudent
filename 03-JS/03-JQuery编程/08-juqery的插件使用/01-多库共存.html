@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div>1111</div>
+<script>
+    $(function () {
+        function $(e){
+            return document.querySelector(e);
+        }
+        console.log($('div'));
+        // 如果我们自定义了一个函数  并且函数名为$ 那么如果在使用jauery方法会报错
+        // $('div').each(function (i,e) {
+        //     console.log(e);
+        // });
+        // 解决方案一:是把$换成jQuery
+        // jQuery('div').each(function (i,e) {
+        //     console.log(e);
+        // });
+
+        // 解决方案二:用户自定义jquery名字
+        var aa = jQuery.noConflict();
+        aa('div').each(function (i,e) {
+            console.log(e);
+        });
+
+    })
+</script>
+</body>
+</html>

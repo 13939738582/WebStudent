@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .lis {
+            list-style: none;
+            width: 300px;
+            height: 30px;
+            background-color: lightgreen;
+            font-size: 15px;
+            line-height: 30px;
+        }
+        .aa {
+            float: right;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 25px;
+            color: red;
+        }
+        .aa:hover {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<textarea></textarea>
+<button class="btn1">发布</button>
+<ul></ul>
+<script>
+    var text = document.querySelector('textarea');
+    var ul = document.querySelector('ul');
+    var btn1 = document.querySelector('.btn1');
+    btn1.disabled = true;
+    text.onmouseout = function (){
+        if(text.value==''){
+            btn1.disabled = true;
+        }else {
+            btn1.disabled = false;
+        }
+    }
+    btn1.onclick = function (){
+        var str = text.value;
+        var li = document.createElement('li');
+        li.innerHTML = str+'<a href="javascript:;" class="aa">删除</a>';
+        li.className = 'lis';
+        console.log(str);
+        ul.appendChild(li);
+        text.value = '';
+        btn1.disabled = true;
+        var as = document.querySelectorAll('a');
+        for (var i =0;i<as.length;i++){
+            as[i].onclick = function (){
+                ul.removeChild(this.parentNode);
+            }
+        }
+    }
+</script>
+</body>
+</html>

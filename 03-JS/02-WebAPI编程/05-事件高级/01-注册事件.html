@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>传统注册事件</button>
+<button>方法监听注册事件</button>
+<button>ie9之前的attachEvent（仅对ie有效）</button>
+<script>
+    var btns = document.querySelectorAll('button');
+    // 传统注册事件会有唯一性，同一个对象后面的同一个事件会把前面的事件覆盖掉
+    btns[0].onclick = function (){
+        alert('hello world');
+    }
+    btns[0].onclick = function (){
+        alert('你好世界');
+    }
+    // addEventListener 方法监听注册事件，可以执行多个同一个对象的同一个事件（有兼容性问题）
+    btns[1].addEventListener("click", function (){
+        alert('hello world');
+    })
+    btns[1].addEventListener("click", function (){
+        alert('你好世界');
+    })
+
+    // attachEvent仅对ie9之前有效  了解
+    btns[2].attachEvent('onclick',function (){
+        alert('11');
+        alert('22');
+    })
+
+</script>
+</body>
+</html>

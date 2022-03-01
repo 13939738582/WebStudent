@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        li {
+            width: 100px;
+            height: 50px;
+            background-color: green;
+            margin: 100px 0;
+        }
+    </style>
+</head>
+<body>
+<div>123</div>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<a href="http://www.baidu.com">百度</a>
+<form action="http://www.baidu.com">
+    <input type="submit" value="提交" name="sub">
+</form>
+<script>
+    var div = document.querySelector('div');
+    // e.target返回的是触发事件的对象 this返回的是绑定事件的对象
+    div.addEventListener("click", function (e){
+        console.log(e.target);
+        console.log(this);
+    });
+
+    var ul = document.querySelector('ul');
+    ul.addEventListener("click", function (e){
+        console.log(e.target);
+        console.log(this);
+    });
+    function fn(e){
+        console.log(e.type);
+    }
+    div.addEventListener('mouseover',fn);
+    div.addEventListener('mouseout',fn);
+
+    // 阻止默认事件
+    var a = document.querySelector('a');
+    a.addEventListener("click", function (e){
+        e.preventDefault();
+    })
+
+</script>
+</body>
+</html>

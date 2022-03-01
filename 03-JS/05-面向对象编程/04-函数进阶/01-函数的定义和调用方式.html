@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 1.自定义函数（命名函数）
+        function fn(){
+            console.log(123123)
+        };
+
+        // 2.函数表达式（匿名函数）
+        var fn1 = function (){};
+
+        // 3.new Function('参数1','参数2','函数体')定义函数(都要是字符串的格式)(不推荐效率很低)
+        var fn2 = new Function('num','console.log(123+num)');
+        fn2(2);
+        // 通过上述例子可以知道  所有的函数都是Function对象的一个实例对象
+        // 里面有原型对象__proto__
+        console.dir(fn);
+        // 如果返回true则为对象
+        console.log(fn instanceof Object);
+        // console.log(fn.__proto__ == Function.prototype);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

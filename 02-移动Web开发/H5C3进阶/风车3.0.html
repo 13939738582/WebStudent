@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            border-radius: 50%;
+            transition: all 8s;
+            margin: 200px auto;
+            position: relative;
+        }
+        .box div {
+            width: 60px;
+            height: 8px;
+            background-color: blue;
+            border-radius: 50%;
+        }
+        .box .cen {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            border-radius: 50%;
+            animation-name: dcen;
+            animation-duration: 1s;
+        }
+        .box .cen {
+            margin-top: 50%;
+            margin-left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .box div {
+            transition: all 1s;
+        }
+        .box .div1 {
+            position: absolute;
+            top: 100px;
+            left: 16px;
+            background-color: red;
+        }
+        /*@keyframes  dd{*/
+        /*    100% {*/
+        /*        position: absolute;*/
+        /*        top: 100px;*/
+        /*        left: 123px;*/
+        /*        background-color: red;*/
+        /*    }*/
+        /*}*/
+        /*.box .div2 {*/
+        /*    animation-name: dd;*/
+        /*    animation-duration: 1s;*/
+        /*    animation-fill-mode: backwards;*/
+        /*    animation-iteration-count: infinite;*/
+        /*}*/
+        .box .div2 {
+            position: absolute;
+            top: 100px;
+            left: 123px;
+            background-color: red;
+        }
+        .box .div3 {
+            position: absolute;
+            transform: rotate(90deg);
+            top: 42px;
+            left: 69px;
+            background-color: red;
+        }
+        .box .div4 {
+            position: absolute;
+            transform: rotate(90deg);
+            top: 150px;
+            left: 69px;
+            background-color: red;
+        }
+        @keyframes  move{
+            100% {
+                transform: rotate(720deg);
+            }
+        }
+        .box {
+            animation-name: move;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="cen"></div>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var obj= {
+            id: 1,
+            pname: '小米',
+            price: 3999
+        };
+        // // Object.keys方法返回的是一组由属性名组成的数组
+        // console.log(Object.keys(obj));
+        // // console.log(obj[Object.keys(obj)[1]]);
+        //
+        // Object.keys(obj).forEach(function (value){
+        //     console.log(obj[value]);
+        // });
+        //
+        // // for (var key in obj){
+        // //     console.log(obj[key]);
+        // // }
+        // // 这两者的区别是Object.keys可以直接把对象的属性名拿到，放在一个数组中，方便后续使用
+        // // for in 不行
+
+
+
+
+        // Object.defineProperty() 定义新属性，或修改选属性
+        // 以前的新增属性修改属性方法
+        // obj.num = 1000;
+        // obj.id = 2;
+        // console.log(obj);
+        // ES5新增的
+        // Object.defineProperty(obj(目标对象),prop(需要定义或者修改的属性名),descriptor(目标属性所拥有的特性对象形式))
+        Object.defineProperty(obj,'num',{
+            value:1000
+        });
+        Object.defineProperty(obj,'price',{
+            value:2000
+        });
+        Object.defineProperty(obj,'id',{
+            // writable该对象的属性是否可以被重写  默认为false(需要使用Object.defineProperty添加)
+            writable:false
+        });
+        obj.id = 111;
+        // obj.num = 123;
+        console.log(obj);
+        Object.defineProperty(obj,'phone',{
+            value:13939738582,
+            // 该属性是否允许遍历 默认为false
+            enumerable:false,
+            // 该属性是否允许被删除还不允许修改里面的特性 默认为false
+            configurable:false
+        });
+        // 上面设置了configurable:false 下面在修改特性  会报错
+        // Object.defineProperty(obj,'phone',{
+        //     value:13939738582,
+        //     // 该属性是否允许遍历 默认为false
+        //     enumerable:true,
+        //     // 该属性是否允许被删除还不允许修改里面的特性 默认为false
+        //     configurable:true
+        // });
+        console.log(obj);
+        Object.keys(obj).forEach(function (value){
+            console.log(obj[value]);
+        });
+        // 删除对象中的属性
+        delete obj.phone;
+        console.log(obj);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var str = 'abcoefoxyozzopp';
+
+
+        // 思路：定义一个对象，用来保存不同的字符，遍历字符串，如果对象中没有则添加，否则对象的该属性加一，最后遍历对象找出最大的输出即可
+        var obj = {};
+        for (var i=0;i<str.length;i++){
+            if (obj[str.charAt(i)]){
+                obj[str.charAt(i)] += 1;
+            }else {
+                obj[str.charAt(i)] = 1;
+            }
+        }
+        console.log(obj);
+
+        var max = 0;
+        var ch = '';
+        for (var key in obj){
+            if (obj[key]>max){
+                max = obj[key];
+                ch = key;
+            }
+        }
+        console.log(max+'          最多的字符是'+ch);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

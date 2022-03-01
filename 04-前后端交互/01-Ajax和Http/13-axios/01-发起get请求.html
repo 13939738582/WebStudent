@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="axios.js"></script>
+    <script>
+        window.addEventListener('load', fn);
+
+        function fn() {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+                var obj = {
+                        name: '张三',
+                        age: 18
+                    }
+                    // 使用方法： axios.get(url,{params:{对象的参数}}).then(function(){})
+                axios.get('http://www.liulongbin.top:3006/api/get', {
+                    params: obj
+                }).then(function(res) {
+                    // 这里注意res并不是服务器响应回来的真实数据，而是axios包装后的数据
+                    console.log(res);
+                    // 服务器响应的真实数据是res对象中的data属性
+                    console.log(res.data);
+                });
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <button>发起get请求</button>
+</body>
+
+</html>

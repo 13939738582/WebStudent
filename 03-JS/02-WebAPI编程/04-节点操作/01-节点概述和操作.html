@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>我是div</div>
+<span>我是span</span>
+<ul>
+    <li class="aa">我是li1</li>
+    <li>我是li2</li>
+    <li>我是li3</li>
+    <li>我是li4</li>
+</ul>
+<div class="box">
+    <span class="sp">×</span>
+</div>
+<script>
+    // 利用节点获取元素
+    var box = document.querySelector('.box');
+    console.dir(box);
+
+
+    // 获取父节点(距离元素最近的父级节点)
+    var sp = document.querySelector('.sp');
+    console.log(sp);
+    console.log(sp.parentNode);
+
+    //获取子节点(所有的子节点包括元素节点 属性节点 文本节点)
+    var ul = document.querySelector('ul');
+    console.log(ul.childNodes);
+    console.log(ul.childNodes[1].nodeType);
+
+    // 只获取元素节点
+    for (var k in ul.childNodes){
+        if (ul.childNodes[k].nodeType==1){
+            console.log(ul.childNodes[k]);
+        }
+    }
+    // 获取所有子元素节点parent.children
+    console.log(ul.children);
+
+    // 获取第一个子节点
+    console.log(ul.firstChild);
+
+    // 获取最后一个子节点
+    console.log(ul.lastChild);
+
+    // 获取第一个子元素节点
+    console.log(ul.firstElementChild);
+
+    // 获取最后一个子元素节点
+    console.log(ul.lastElementChild);
+
+    // 解决上面的兼容性问题获取第一个和最后一个元素节点
+    console.log(ul.children[0]);
+    console.log(ul.children[ul.children.length-1]);
+</script>
+</body>
+</html>

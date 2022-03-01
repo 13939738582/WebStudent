@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米布局案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        @font-face {
+            font-family: 'icomoon';
+            src:  url('../fonts/icomoon.eot?vttu8k');
+            src:  url('../fonts/icomoon.eot?vttu8k#iefix') format('embedded-opentype'),
+            url('../fonts/icomoon.ttf?vttu8k') format('truetype'),
+            url('../fonts/icomoon.woff?vttu8k') format('woff'),
+            url('../fonts/icomoon.svg?vttu8k#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        body {
+            background-color: rgb(245, 245, 245);
+        }
+        ul li {
+            background-color: #fff;
+            width: 250px;
+            height: 400px;
+            float: left;
+            margin: 10px 10px;
+            list-style: none;
+        }
+        ul li:first-child {
+            border-top: 2px solid red;
+            font-family: 'icomoon';
+            background-color: rgb(241, 237, 237);
+        }
+        ul li:first-child h4 {
+            color: red;
+            text-align: center;
+        }
+        ul li:first-child h4:first-child {
+            font-size: 30px;
+            margin-top: 50px;
+        }
+        ul li:first-child h4:nth-child(2) {
+            font-size: 40px;
+            margin: 40px 0;
+        }
+        ul li:first-child p{
+            text-align: center;
+            margin-bottom: 60px;
+            color: gray;
+        }
+        ul li:first-child div {
+            width: 200px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 30px;
+        }
+        ul li:first-child span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(96, 87, 81);
+            color: white;
+            text-align: center;
+            line-height: 38px;
+        }
+        ul li:nth-child(2) {
+            border-top: 2px solid yellow;
+        }
+        ul li:nth-child(3) {
+            border-top: 2px solid green;
+        }
+        ul li:nth-child(4) {
+            border-top: 2px solid blue;
+        }
+        ul li:last-child {
+            border-top: 2px solid red;
+        }
+        li {
+            text-align: center;
+        }
+        li img {
+            margin-bottom: 20px;
+        }
+        li h4 {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        li p {
+            color: rgb(210, 210, 210);
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        li span:first-child {
+            color: rgb(250, 124, 46);
+        }
+        li span:last-child {
+            color: rgb(176, 176, 176);
+            text-decoration: line-through;
+        }
+        #sp {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="box">
+        <h4>14:00 场</h4>
+        <h4></h4>
+        <p>距离结束还有</p>
+        <div>
+            <span>04</span>
+            :
+            <span>43</span>
+            :
+            <span id="sp">25</span>
+        </div>
+    </li>
+    <li class="box">
+        <img src="fimg/MI.jpg" alt="">
+        <h4>小米水质TDS检测笔 白色</h4>
+        <p>准确检测家中水质纯度</p>
+        <div>
+            <span>29元</span>
+            <span>39元</span>
+        </div>
+    </li>
+    <li class="box">
+        <img src="fimg/MI.jpg" alt="">
+        <h4>小米水质TDS检测笔 白色</h4>
+        <p>准确检测家中水质纯度</p>
+        <div>
+            <span>29元</span>
+            <span>39元</span>
+        </div>
+    </li>
+    <li class="box">
+        <img src="fimg/MI.jpg" alt="">
+        <h4>小米水质TDS检测笔 白色</h4>
+        <p>准确检测家中水质纯度</p>
+        <div>
+            <span>29元</span>
+            <span>39元</span>
+        </div>
+    </li>
+    <li class="box">
+        <img src="fimg/MI.jpg" alt="">
+        <h4>小米水质TDS检测笔 白色</h4>
+        <p>准确检测家中水质纯度</p>
+        <div>
+            <span>29元</span>
+            <span>39元</span>
+        </div>
+    </li>
+</ul>
+
+</body>
+</html>

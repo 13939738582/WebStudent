@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<video src="mov.mp4" muted></video>
+<script>
+    // 1.DOM对象   利用原生的JS获取的对象就是DOM对象
+    var div = document.querySelector('div');
+    console.dir(div);
+
+    // 2.jQuery对象   利用jQuery方式获取的对象就是jQuery对象 本质就是利用$（jQuery）把DOM对象进行了包装
+    $('div'); //$('div')就是一个jQuery对象
+    console.dir($('div'));
+
+    // 3.jQuery对象只能使用jQuery方法   DOM对象只能使用原生的js属性和方法
+    // DOM对象不能使用jQuery的方法
+    // div.style.display = 'none';
+    // div.hide();
+    // jQuery对象不能使用原生的js属性和方法
+    // $('div').style.display = 'none';
+    // $('div').hide();
+
+    // 4.jQuery对象和DOM对象的相互转换
+    // 4.1.DOM对象转换为jQuery对象
+    var vid = document.querySelector('video');
+    $(vid);
+    // 4.2.jQuery对象转换为DOM对象
+    // 利用数组的方式转换为DOM对象
+    // $('video')[0].play();
+    // 或通过get()方式
+    $('video').get(0).play();
+</script>
+</body>
+</html>

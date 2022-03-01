@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 座机号码验证： 两种格式：前面三位-后面八位    前面四位-后面七位  都是数字
+        var rg = /^\d{3}-\d{8}|\d{4}-\d{7}$/;
+        // 或者
+        // var rg = /^\d{3,4}-\d{7,8}$/;(这样写有问题，当前面四位后面八位或者前面三位后面七位无法验证)
+        console.log(rg.test('010-12345678'));
+        console.log(rg.test('0101-1234567'));
+        console.log(rg.test('0101-12345678'));
+        console.log(rg.test('010-1234567'));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bg {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<button>切换背景颜色</button>
+<script>
+    var div = document.querySelector('div');
+    // 添加类
+    div.classList.add('aa');
+    div.classList.add('bb');
+    // 删除类
+    div.classList.remove('aa');
+    // 切换类
+    var btn = document.querySelector('button');
+    btn.addEventListener("click", function (){
+        document.body.classList.toggle('bg');
+    })
+</script>
+</body>
+</html>

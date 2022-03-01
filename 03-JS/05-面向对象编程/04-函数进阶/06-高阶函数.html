@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        $(function (){
+            // 高阶函数是指函数中的形参是一个函数，或者函数的返回值是一个函数
+            // 例如：
+            function fn(x,y,fun){
+                console.log(x+y);
+                fun && fun();
+            }
+            fn(1,2,function (){
+                console.log('我是一个函数');
+            })
+            fn(2,3);
+
+            // 例如：
+            $('div').animate({
+                left:500
+            },function (){
+                $('div').css('backgroundColor','green');
+            })
+        });
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

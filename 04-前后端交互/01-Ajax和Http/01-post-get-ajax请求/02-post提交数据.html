@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function (){
+            var btn =  document.querySelector('button');
+            btn.addEventListener('click',function (){
+                $.post('http://www.liulongbin.top:3006/api/addbook/',{bookname:'水浒传',author:'施耐庵',publisher:'上海图书出版社'},function (res){
+                    console.log(res);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<button>点击提交请求</button>
+</body>
+</html>

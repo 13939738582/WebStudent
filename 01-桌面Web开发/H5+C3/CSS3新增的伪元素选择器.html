@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3新增的伪元素选择器</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 100px auto;
+        }
+        div::before {
+            content: "我";
+        }
+        div::after {
+            content: "奥特曼";
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div>
+    是
+</div>
+</body>
+</html>

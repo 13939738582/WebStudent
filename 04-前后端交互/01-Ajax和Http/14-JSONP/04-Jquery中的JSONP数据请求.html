@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js"></script>
+    <title>Document</title>
+    <script>
+        $.ajax({
+            // 这里注意不需要写callback，jquery会为我们自动生成一个回调函数
+            url: 'http://www.liulongbin.top:3006/api/jsonp?name=张三&age=17',
+            // 如果想要指定回调函数名字
+            // 这里自定义callback参数的名称，例如将callback修改为cb
+            jsonp: 'cb',
+            // 这里自定义callback的属性值
+            jsonpCallback: 'success',
+            // 使用Jquery发起JSONP请求，必须指定dataType的属性值为jsonp
+            dataType: 'jsonp',
+            success: function(res) {
+                console.log(res);
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

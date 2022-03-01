@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var money = 100;
+        while (true){
+            var a = prompt('请输入您要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+            if (a==4){
+                alert('您已经退出本ATM机');
+                break;
+            }else {
+                switch (a){
+                    case '1' :
+                        var popmoney = prompt('请输入存款金额');
+                        money+=parseFloat(popmoney);
+                        alert(money);
+                        break;
+                    case '2' :
+                        var pushmoney = prompt('请输入取款金额');
+                        money-=parseFloat(pushmoney);
+                        alert(money);
+                        break;
+                    case '3' :
+                        alert(money);
+                        break;
+                    default:
+                        alert('输入的指令无效');
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- 导入页面的基本样式 -->
+    <link rel="stylesheet" href="./css/search.css" />
+    <!-- 导入 jQuery -->
+    <script src="./lib/jquery.js"></script>
+    <!-- 导入模板引擎 -->
+    <script src="./lib/template-web.js"></script>
+    <!-- 定义搜索列表的模板 -->
+    <script type="text/html" id="tpl-suggestList">
+        {{each result}}
+        <div class="suggest-item">{{$value[0]}}</div>
+        {{/each}}
+    </script>
+    <script>
+        $(function() {
+            // 定义缓存对象
+            var cacheObj = {};
+            $('#ipt').on('keyup', function() {
+                clearTimeout(timer);
+                var str = $(this).val().trim();
+                if (str.length <= 0) {
+                    return $('#suggest-list').empty().hide();
+                } else {
+                    if (cacheObj[str]) {
+                        return renderSuggestList(cacheObj[str])
+                    }
+                    // console.log(str);
+                    // getSuggestList(str);
+                    debounceSearch(str);
+                }
+            });
+            // 获取搜索列表
+            function getSuggestList(keywords) {
+                $.ajax({
+                    url: 'https://suggest.taobao.com/sug?q=' + keywords,
+                    dataType: 'jsonp',
+                    success: function(res) {
+                        renderSuggestList(res);
+                    }
+                });
+            }
+            // 渲染UI结构
+            function renderSuggestList(res) {
+                if (res.result.length <= 0) {
+                    return $('#suggest-list').empty().hide();
+                } else {
+                    var list = template('tpl-suggestList', res);
+                    $('#suggest-list').html(list).show();
+                    var k = $('#ipt').val().trim();
+                    cacheObj[k] = res;
+                }
+            }
+            // 鼠标点击推荐选项把值给搜索框
+            $('#suggest-list').on('click', 'div', function() {
+                $('#ipt').val($(this).html());
+                $('#suggest-list').empty().hide();
+            });
+            // 定义防抖函数
+            var timer = null;
+
+            function debounceSearch(keywords) {
+                timer = setTimeout(() => {
+                    getSuggestList(keywords);
+                }, 500);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <img src="./images/taobao_logo.png" alt="" class="logo" />
+
+        <div class="box">
+            <!-- tab 栏 -->
+            <div class="tabs">
+                <div class="tab-active">宝贝</div>
+                <div>店铺</div>
+            </div>
+            <!-- 搜索区域（搜索框和搜索按钮） -->
+            <div class="search-box">
+                <input id="ipt" type="text" class="ipt" placeholder="请输入要搜索的内容" /><button class="btnSearch">
+          搜索
+        </button>
+            </div>
+            <!-- 搜索建议列表 -->
+            <div id="suggest-list"></div>
+        </div>
+    </div>
+</body>
+
+</html>

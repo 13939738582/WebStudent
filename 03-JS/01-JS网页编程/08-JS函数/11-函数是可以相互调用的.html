@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f1(){
+            console.log(11);
+            f2();
+        }
+        function f2(){
+            console.log(22);
+        }
+        f1();
+
+        function a(){
+            console.log(b());
+        }
+        function b(){
+            return  '我是b函数';
+        }
+        a();
+
+        // 递归调用
+        var i=0;
+        function c(){
+            console.log('我是C函数');
+            i++;
+            if (i>30){
+                return;
+            }else{
+                c();
+            }
+        }
+        c();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

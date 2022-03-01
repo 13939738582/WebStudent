@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3中的盒子模型</title>
+    <style>
+        /*border和padding会撑开盒子*/
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 100px auto;
+            border: 10px solid blue;
+            padding: 10px;
+            /*默认*/
+            /*box-sizing: content-box;*/
+            /*不会撑开盒子*/
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<!--原来的盒子模型-->
+<div class="box1"></div>
+</body>
+</html>

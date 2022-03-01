@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        class Father {
+            constructor(x,y) {
+                this.x = x;
+                this.y = y;
+            }
+            sum(){
+                return this.x+this.y;
+            }
+            say(){
+                return '我是爸爸';
+                // console.log('我是爸爸');
+            }
+        }
+        class Son extends Father{
+            // 子类继承父类的加法方法，同时拓展自己的减法方法
+            constructor(x,y) {
+                super(x,y);//调用父类中的构造函数 把参数传递到父类 super必须写在this之前（父亲要在儿子之前）
+                // super.say();
+                this.x = x;
+                this.y = y;
+                this.say();
+            }
+            sub(){
+                return this.x - this.y;
+            }
+            say(){
+                // console.log('我是儿子');
+                return '我是儿子';
+                // 子类中调用父类的方法  super.父类函数名()
+                // return super.say()+'的儿子';
+            }
+        }
+        // 1.在继承中，如果实例化子类输出一个方法，会首先看该子类是否有这种方法，如果有则执行子类中的方法，否则执行父类（就近原则）
+        var s = new Son(5,1);
+        console.log(s.say());
+        console.log(s.sub());
+        console.log(s.sum());
+        // console.log(new Son(8,3));
+
+    </script>
+</head>
+<body>
+<button>点击</button>
+<script>
+    var that;
+    class Stra {
+        constructor(uname,age) {
+            // constructor里面的this指的是创建的实例
+            // console.log(this);
+            this.name = uname;
+            this.age = age;
+            this.btn = document.querySelector('button');
+            this.btn.onclick = this.sing;//点击完之后才调用 所以此处不加小括号  加小括号是立即调用
+            // 因为下面的sing方法中的this指向调用者 ，而button没有name属性，所以无法成功调用
+            // 解决方案：先用一个全局变量把constructor里面的this保存，然后把sing里面的this更改即可
+            // that = this;
+        }
+        sing() {
+            // 自定义方法中的this指向的是调用者
+            console.log(this.name+'在唱冰雨,他今年'+this.age+'岁了');
+            // 更改为：
+            // console.log(that.name+'在唱冰雨,他今年'+that.age+'岁了');
+        }
+    }
+    var ldh = new Stra('刘德华',44);
+</script>
+</body>
+</html>

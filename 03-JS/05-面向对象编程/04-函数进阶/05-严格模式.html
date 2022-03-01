@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <script>-->
+<!--        // 为脚本开启严格模式-->
+<!--        'use strict';-->
+<!--        // 变量名声明不能使用-->
+<!--        // num = 1;-->
+<!--        // console.log(num);-->
+
+<!--        // 不能删除已经定义好的变量-->
+<!--        // var num = 1;-->
+<!--        // console.log(num);-->
+<!--        // delete num;-->
+
+<!--        // 严格模式下，全局作用域下的函数this不在指向window，而是指向undefined-->
+<!--        // function fn(){-->
+<!--        //     console.log(this);-->
+<!--        // }-->
+<!--        // fn();-->
+
+<!--        // 严格模式下的构造函数不加new来调用会出错，因为会默认当成全局作用域下的函数来调用，但是全局作用域下的函数this指向undefined-->
+<!--        // 无法给undefined值-->
+<!--        // function Star(){-->
+<!--        //     this.sex = '男';-->
+<!--        // }-->
+<!--        // // Star();-->
+<!--        // var a = new Star();-->
+<!--        // console.log(a.sex);-->
+<!--        -->
+<!--        // 严格模式下的this和普通模式一样都是指向window-->
+<!--        // setTimeout(function (){-->
+<!--        //     console.log(this);-->
+<!--        // },1000);-->
+<!--        -->
+<!--    </script>-->
+
+<!--    <script>-->
+<!--        // 或者-->
+<!--        (function (){-->
+<!--            // 为脚本开启严格模式-->
+<!--            'use strict';-->
+<!--        })();-->
+<!--    </script>-->
+
+
+<!--    为函数开启严格模式-->
+    <script>
+        // 严格模式下函数里面的形参不允许同名
+        function fn(a,b){
+            // 只给第一个函数开启了严格模式
+            'use strict';
+            console.log(a+b);
+        }
+
+        fn(1,2);
+        function fn1(a,a){
+            // fn1里面还是普通模式
+            console.log(a+a);
+        }
+        fn1(1,2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      var str = 'hello';
+      reg = /o/;
+      console.log(reg.exec(str));
+
+      // 利用正则的小括号提取分组
+      var str1 = '<div>我是{{name}}</div>';
+      reg1 = /{{([a-zA-Z]+)}}/;
+      console.log(reg1.exec(str1));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

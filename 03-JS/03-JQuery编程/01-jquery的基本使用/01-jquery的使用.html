@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+<!--    <script src="jquery.js"></script>-->
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<script>
+    // 等待页面DOM加载完毕再去执行JS代码
+    // 1.
+    // $(document).ready(function (){
+    //     $('div').hide();
+    // });
+
+    // 2.
+    $(function (){
+        $('div').hide();
+    });
+</script>
+<div></div>
+</body>
+</html>

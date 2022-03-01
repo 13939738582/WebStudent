@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div></div>
+<ul>
+    <li>111111111</li>
+    <li>222222222</li>
+    <li>333333333</li>
+</ul>
+<button>解除</button>
+<p>我只能点一次</p>
+<script>
+    $(function (){
+        $('div').on({
+            mouseenter:function (){
+                $(this).css('background','green');
+            },
+            mouseleave:function (){
+                $(this).css('background','yellow');
+            },
+            click:function (){
+                $(this).css('background','red');
+            }
+        });
+        $('ul').on('click','li',function (){
+            $(this).css('color','red');
+        })
+        // 事件的解绑
+        $('button').on('click',function (){
+            // 如果off（）里面为空，则把所有的事件全部解绑
+            // $('div').off();
+            // 如果只解除某种事件，则在off（）里面写需要解除的事件
+            $('div').off('click mouseenter');
+            // 解除事件委托
+            $('ul').off('click','li');
+        });
+        // one事件  是能触发一次事件
+        $('p').one('click',function (){
+           alert(111);
+        });
+    });
+</script>
+</body>
+</html>

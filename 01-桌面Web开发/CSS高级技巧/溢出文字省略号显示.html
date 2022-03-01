@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>溢出文字省略号显示</title>
+    <style>
+        /*单行溢出的文字省略号显示*/
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 100px auto;
+            /*强制不换行*/
+            white-space: nowrap;
+            /*溢出部分隐藏*/
+            overflow: hidden;
+            /*!*多出的部分省略号代替*!*/
+            text-overflow: ellipsis;
+        }
+        /*多行文本溢出文字省略号显示*/
+        .div2 {
+            width: 100px;
+            height: 65px;
+            background-color: green;
+            margin: 100px auto;
+            /*溢出部分隐藏*/
+            overflow: hidden;
+            /*多出的部分省略号代替*/
+            text-overflow: ellipsis;
+            /*弹性伸缩盒子模型显示*/
+            display: -webkit-box;
+            /*限制在一个块元素显示的文本行数*/
+            -webkit-line-clamp: 3;
+            /*设置或检索伸缩盒子对象的子元素的排列方式*/
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    我有好多好多好多好多好多好多好多好多好多好多好多好多好多好多的字
+</div>
+<div class="div2">
+    我有好多好多好多好多好多好多好多好多好多好多好多好多好多好多的字
+</div>
+</body>
+</html>

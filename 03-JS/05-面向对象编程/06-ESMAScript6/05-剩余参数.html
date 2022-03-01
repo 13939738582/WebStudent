@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // // 剩余参数允许将一个不固定数量的参数放在一个数组中
+        // function sum(first,...args) {
+        //     console.log(first);
+        //     console.log(args);
+        // }
+        // sum(10,20,30);
+
+        // 要求：计算若干个数相加的，数不固定
+
+        // 之前只能用arguments做
+        // function sum2(){
+        //     var temp=0;
+        //     for (var i =0;i<arguments.length;i++){
+        //         temp+=arguments[i];
+        //     }
+        //     return temp;
+        // }
+        // console.log(sum2(1,2,34));
+
+        const sum1 = (...arr) => {
+            let total = 0;
+            arr.forEach(value => total += value);
+            return total;
+        }
+        console.log(sum1(1,2,3));
+        console.log(sum1(10,778,857));
+
+
+        // 剩余参数和解构配合使用
+        let student = ['张三','李四','王五'];
+        let [s1,...arr] = student;
+        console.log(s1);
+        console.log(arr);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

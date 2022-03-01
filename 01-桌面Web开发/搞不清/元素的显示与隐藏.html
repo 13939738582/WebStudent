@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素的显示与隐藏</title>
+    <style>
+        ul li {
+            list-style: none;
+            width: 100px;
+            height: 30px;
+        }
+        .li1 {
+            background-color: red;
+        }
+        .li2 {
+            display: none;
+            background-color: green;
+        }
+        .li1:hover + .li2{
+            display: block;
+        }
+        .li1:hover + .li2 + .li2{
+            display: block;
+        }
+        .li1:hover + .li2 + .li2 + .li2{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li class="li1">1</li>
+    <li class="li2">2</li>
+    <li class="li2">3</li>
+    <li class="li2">4</li>
+</ul>
+</body>
+</html>

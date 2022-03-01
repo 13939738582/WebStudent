@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<p>
+      123
+    <span>456</span>
+</p>
+<script>
+    // innerText 和 innerHTML的区别
+
+
+    // innerText 去除空格和换行  不识别HTML标签
+    var div = document.querySelector('div');
+    div.innerText = '奥特曼';
+    // 如果要加粗
+    // div.innerText = '<strong>奥特曼</strong>';
+
+    // innerHTML  不去除空格和换行  识别HTML标签  使用最多（w3c标准）
+    // div.innerHTML = '<strong>奥特曼</strong>';
+
+
+    // 这两个属性是可读写的 即可获取元素里面的内容
+    var p = document.querySelector('p');
+    console.log(p.innerText);
+    console.log(p.innerHTML);
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.addEventListener("load", function (){
+            // 1.普通函数
+
+            function fn(){
+                console.log('我是普通函数');
+            }
+            fn();
+            // fn.call();
+
+
+            // 2.对象的方法
+            var obj = {
+                sing:function (){
+                    console.log('我是对象函数');
+                }
+            }
+            obj.sing();
+
+            // 3.构造函数
+            function Stat(){
+                console.log('我是构造函数');
+            };
+
+            var fn1 = new Stat();
+            fn1;
+
+            // 4.绑定事件函数
+            var btn = document.querySelector('button');
+            btn.onclick = function (){
+                alert('我是绑定事件函数');
+            };
+
+
+            // 5.定时器函数
+            setInterval(function (){
+                console.log('我是定时器函数');
+            },1000);
+
+            // 6.立即执行函数
+            (function (){
+                console.log('我是立即执行函数');
+            })();
+        })
+    </script>
+</head>
+<body>
+<button>按钮</button>
+</body>
+</html>
