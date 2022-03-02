@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: brown;
+}
+
+h1 {
+    color: red;
+    font-weight: 300;
+}
